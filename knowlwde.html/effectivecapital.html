@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+          <div id="navbar"></div>
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
+<div class=" mx-auto mt-[150px] mb-[100px] pt-[50px] bg-[#f4f4f4] border border-gray-300 rounded-lg shadow-sm font-sans text-[13px] overflow-hidden">
+  
+  <div class="flex justify-center -mt-3 mb-4">
+    <div class="bg-[#1e407a] text-white px-8 px-auto rounded-md font-semibold shadow-md py-5">
+      Effective Capital
+    </div>
+  </div>
+
+  <div class="text-center text-2xl font-normal py-">
+    Total Effective Capital: <span class="font-semibold">Rs.0</span>
+  </div>
+
+  <div class="px-10 mb-8">
+    <h3 class="text-center text-lg mb-6">Personal Property:</h3>
+    
+    <div class="space-y-4">
+      <div class="flex items-center gap-4">
+        <label class="w-80 text-right pr-4">Paid Share Capital:</label>
+        <input type="text" value="0" class="w-24 border border-gray-400 bg-white p-1 text-center font-bold outline-none">
+        <div class="flex-1 relative flex items-center">
+          <div class="w-3.5 h-3.5 bg-[#1e407a] rounded-sm absolute left-0 z-10 cursor-pointer"></div>
+          <div class="w-full h-[1px] bg-gray-400"></div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <label class="w-80 text-right pr-4">Share Premium (in Rs.):</label>
+        <input type="text" value="0" class="w-24 border border-gray-400 bg-white p-1 text-center font-bold outline-none">
+        <div class="flex-1 relative flex items-center">
+          <div class="w-3.5 h-3.5 bg-[#1e407a] rounded-sm absolute left-0 z-10 cursor-pointer"></div>
+          <div class="w-full h-[1px] bg-gray-400"></div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <label class="w-80 text-right pr-4">Reserves & Surplus (excluding revaluation reserves) (in Rs.):</label>
+        <input type="text" value="0" class="w-24 border border-gray-400 bg-white p-1 text-center font-bold outline-none">
+        <div class="flex-1 relative flex items-center">
+          <div class="w-3.5 h-3.5 bg-[#1e407a] rounded-sm absolute left-0 z-10 cursor-pointer"></div>
+          <div class="w-full h-[1px] bg-gray-400"></div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <label class="w-80 text-right pr-4">Long Term Loans (in Rs.):</label>
+        <input type="text" value="0" class="w-24 border border-gray-400 bg-white p-1 text-center font-bold outline-none">
+        <div class="flex-1 relative flex items-center">
+          <div class="w-3.5 h-3.5 bg-[#1e407a] rounded-sm absolute left-0 z-10 cursor-pointer"></div>
+          <div class="w-full h-[1px] bg-gray-400"></div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <label class="w-80 text-right pr-4">Deposits(in Rs.):</label>
+        <input type="text" value="0" class="w-24 border border-gray-400 bg-white p-1 text-center font-bold outline-none">
+        <div class="flex-1 relative flex items-center">
+          <div class="w-3.5 h-3.5 bg-[#1e407a] rounded-sm absolute left-0 z-10 cursor-pointer"></div>
+          <div class="w-full h-[1px] bg-gray-400"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="border-gray-300">
+
+  <div class="px-10 py-8">
+    <h3 class="text-center text-lg mb-6">Investments:</h3>
+    
+    <div class="space-y-4">
+      <div class="flex items-center gap-4">
+        <label class="w-80 text-right pr-4">Investments (in Rs.):</label>
+        <input type="text" value="0" class="w-24 border border-gray-400 bg-white p-1 text-center font-bold outline-none">
+        <div class="flex-1 relative flex items-center">
+          <div class="w-3.5 h-3.5 bg-[#1e407a] rounded-sm absolute left-0 z-10 cursor-pointer"></div>
+          <div class="w-full h-[1px] bg-gray-400"></div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <label class="w-80 text-right pr-4">Accumulated Losses (in Rs.):</label>
+        <input type="text" value="0" class="w-24 border border-gray-400 bg-white p-1 text-center font-bold outline-none">
+        <div class="flex-1 relative flex items-center">
+          <div class="w-3.5 h-3.5 bg-[#1e407a] rounded-sm absolute left-0 z-10 cursor-pointer"></div>
+          <div class="w-full h-[1px] bg-gray-400"></div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <label class="w-80 text-right pr-4">Preliminary Expenses (in Rs.):</label>
+        <input type="text" value="0" class="w-24 border border-gray-400 bg-white p-1 text-center font-bold outline-none">
+        <div class="flex-1 relative flex items-center">
+          <div class="w-3.5 h-3.5 bg-[#1e407a] rounded-sm absolute left-0 z-10 cursor-pointer"></div>
+          <div class="w-full h-[1px] bg-gray-400"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-2 mt-4">
+    <div class="bg-[#f8f9fa] border border-gray-300 flex justify-between items-center px-4 py-1.5 shadow-sm">
+      <div class="flex-1 text-center font-semibold text-lg">Graph</div>
+      <div class="bg-[#1e407a] text-white px-2 rounded cursor-pointer text-xl font-bold leading-none">-</div>
+    </div>
+
+    <div class="bg-white p-10 h-[450px] relative overflow-hidden">
+      <div class="absolute left-10 h-64 flex flex-col justify-between text-right text-xs text-gray-500 w-8">
+        <span>100</span><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span>
+      </div>
+
+      <div class="ml-20 w-[90%] h-64 border-b-2 border-black relative flex justify-around items-end">
+        <div class="absolute w-full h-full flex flex-col justify-between pointer-events-none">
+          <div class="border-t border-gray-200 w-full"></div>
+          <div class="border-t border-gray-200 w-full"></div>
+          <div class="border-t border-gray-200 w-full"></div>
+          <div class="border-t border-gray-200 w-full"></div>
+          <div class="border-t border-gray-200 w-full"></div>
+        </div>
+
+        <div class="absolute -bottom-32 w-full flex justify-around">
+          <div class="w-0 flex justify-center"><span class="transform -rotate-35 origin-top-left text-[10px] whitespace-nowrap font-medium">Paid Share Capital</span></div>
+          <div class="w-0 flex justify-center"><span class="transform -rotate-35 origin-top-left text-[10px] whitespace-nowrap font-medium">Share Premium</span></div>
+          <div class="w-0 flex justify-center"><span class="transform -rotate-35 origin-top-left text-[10px] whitespace-nowrap font-medium">Reserves and Surp...</span></div>
+          <div class="w-0 flex justify-center"><span class="transform -rotate-35 origin-top-left text-[10px] whitespace-nowrap font-medium">Long Term Loans</span></div>
+          <div class="w-0 flex justify-center"><span class="transform -rotate-35 origin-top-left text-[10px] whitespace-nowrap font-medium">Deposits</span></div>
+          <div class="w-0 flex justify-center"><span class="transform -rotate-35 origin-top-left text-[10px] whitespace-nowrap font-medium">Investments</span></div>
+          <div class="w-0 flex justify-center"><span class="transform -rotate-35 origin-top-left text-[10px] whitespace-nowrap font-medium">Accumulated Loss...</span></div>
+          <div class="w-0 flex justify-center"><span class="transform -rotate-35 origin-top-left text-[10px] whitespace-nowrap font-medium">Preliminary Expen...</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-end p-4">
+    <div class="bg-[#f0ad4e] text-white p-2 rounded-full cursor-pointer shadow-md">
+       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+</body>
+</html>

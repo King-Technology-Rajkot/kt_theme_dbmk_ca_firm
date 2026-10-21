@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+    
+</head>
+<body>
+ 
+ <div id="navbar"></div>
+
+
+  <section class="">
+  </section>
+
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+
+
+<section class="max-w-9xl mx-auto px-6 py-5 mt-[60px]">
+
+ <div class="bg-white rounded-md min-h-[500px] relative p-3 mt-6
+            shadow-[0_15px_35px_rgba(0,0,0,0.45)]">
+
+    <h2 class="text-center text-[35px]  mb-6">
+      -Gallery-
+    </h2>
+
+
+    <div class="absolute top-6 right-6">
+      <button
+        onclick="history.back()"
+        class=" bg-[#F0F0F0] border border-gray-300 mt-[50px] px-7 py-2 text-sm rounded hover:bg-gray-100 transition">
+        Back
+      </button>
+    </div>
+
+
+    <div class="mt-10 text-center text-gray-400">
+
+    </div>
+
+  </div>
+
+</section>
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return; 
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+//for animation in page//
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const animElements = document.querySelectorAll(
+    "section, section .grid > div, section .industry-box, section .team-card, section .stats-animate"
+  );
+
+  animElements.forEach(el => {
+    el.classList.add(
+      "scale-90",
+      "translate-y-10",
+      "opacity-0",
+      "transition-all",
+      "duration-700",
+      "ease-out"
+    );
+  });
+
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, idx) => {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          
+          setTimeout(() => {
+            el.classList.remove("scale-90", "translate-y-10", "opacity-0");
+            el.classList.add("scale-105", "translate-y-0", "opacity-100");
+
+            setTimeout(() => {
+              el.classList.remove("scale-105");
+              el.classList.add("scale-100");
+            }, 200);
+          }, idx * 100);
+        } else {
+          
+          el.classList.remove("scale-105", "scale-100", "translate-y-0", "opacity-100");
+          el.classList.add("scale-90", "translate-y-10", "opacity-0");
+        }
+      });
+    },
+    { threshold: 0.25 } 
+  );
+
+  animElements.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>

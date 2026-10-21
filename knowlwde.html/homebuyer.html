@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+        <div id="navbar"></div>
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+<div class="w-full bg-white p-2 font-sans text-[#333] mt-[100px] mb-[10px]">
+  <div class="max-w-6xl mx-auto border border-gray-400 rounded-[2px] bg-[#f1f1f1] relative pt-6 pb-3 px-3 shadow-sm">
+    
+    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+      <span class="bg-[#1a407a] text-white px-4 py-0.5 rounded-[3px] text-[15px] font-bold uppercase whitespace-nowrap border border-[#1a407a]">
+        FOR HOME BUYERS (DELAY INTEREST)
+      </span>
+    </div>
+
+    <div class="mt-2 space-y-1">
+      
+      <div class="grid grid-cols-[1fr_auto] items-center gap-2">
+        <label class="text-[13px] text-gray-700 leading-tight">
+          Date Of Completion As Mentioned In Agreement For Sale
+        </label>
+        <div class="flex gap-1">
+          <input type="text" placeholder="dd" class="border border-gray-400 bg-white w-7 p-0.5 text-center text-[11px] rounded-[1px]" />
+          <input type="text" placeholder="MM" class="border border-gray-400 bg-white w-7 p-0.5 text-center text-[11px] rounded-[1px]" />
+          <input type="text" placeholder="yyyy" class="border border-gray-400 bg-white w-12 p-0.5 text-center text-[11px] rounded-[1px]" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[1fr_auto] items-center gap-2">
+        <label class="text-[13px] text-gray-700 leading-tight">
+          Amount to be Paid Towards The Flat Cost Till The Date Of Completion As Mentioned In The Agreement For Sale (Excluding The Amount For Stamp Duty, Registration And Other Taxes)
+        </label>
+        <input type="text" value="0" class="border border-gray-400 bg-white w-[110px] p-0.5 px-1.5 text-left text-[11px] font-bold rounded-[1px] shadow-inner" />
+      </div>
+
+      <div class="grid grid-cols-[1fr_auto] items-center gap-2">
+        <label class="text-[13px] text-gray-700 leading-tight">
+          Any Amount to be Paid After The Date Of Completion Of The Project As Per Agreement For Sale (Excluding The Amount For Stamp Duty, Registration And Other Taxes)
+        </label>
+        <input type="text" value="0" class="border border-gray-400 bg-white w-[110px] p-0.5 px-1.5 text-left text-[11px] font-bold rounded-[1px] shadow-inner" />
+      </div>
+
+      <div class="grid grid-cols-[1fr_auto] items-center gap-2">
+        <label class="text-[13px] text-gray-700 leading-tight">
+          Date On Which The Above Amount Is Paid
+        </label>
+        <div class="flex gap-1">
+          <input type="text" placeholder="dd" class="border border-gray-400 bg-white w-7 p-0.5 text-center text-[11px] rounded-[1px]" />
+          <input type="text" placeholder="MM" class="border border-gray-400 bg-white w-7 p-0.5 text-center text-[11px] rounded-[1px]" />
+          <input type="text" placeholder="yyyy" class="border border-gray-400 bg-white w-12 p-0.5 text-center text-[11px] rounded-[1px]" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[1fr_auto] items-center gap-2">
+        <label class="text-[13px] text-gray-700 leading-tight">Current Date</label>
+        <div class="flex gap-1">
+          <input type="text" placeholder="dd" class="border border-gray-400 bg-white w-7 p-0.5 text-center text-[11px] rounded-[1px]" />
+          <input type="text" placeholder="MM" class="border border-gray-400 bg-white w-7 p-0.5 text-center text-[11px] rounded-[1px]" />
+          <input type="text" placeholder="yyyy" class="border border-gray-400 bg-white w-12 p-0.5 text-center text-[11px] rounded-[1px]" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[1fr_auto] items-center gap-2">
+        <label class="text-[13px] text-gray-700 leading-tight">
+          MCLR Rate (Please fill this as per your bank)
+        </label>
+        <div class="flex items-center gap-0.5">
+          <input type="text" value="0" class="border border-gray-400 bg-white w-[110px] p-0.5 px-1.5 text-left text-[11px] font-bold rounded-[1px]" />
+          <span class="text-[10px] text-gray-600">%</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[1fr_auto] items-center gap-2 pt-1">
+        <label class="text-[13px] text-gray-700 font-bold uppercase">DELAY INTEREST WORKING (IN RS.)</label>
+        <input type="text" value="0" class="border border-gray-400 bg-white w-[110px] p-0.5 px-1.5 text-left text-[11px] font-bold rounded-[1px] shadow-inner" readonly />
+      </div>
+
+      <div class="flex justify-center pt-3">
+        <button class="bg-[#007bff] text-white px-5 py-1 rounded-[3px] text-[11px] font-bold shadow-sm active:bg-[#0062cc]">
+          Calculate
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+  
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+</body>
+</html>

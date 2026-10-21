@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* SERVICES DROPDOWN */
+    .navbar {
+      list-style: none;
+      display: flex;
+      position: relative;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    header, nav, ul, li {
+  overflow: visible;
+}
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 220px;
+      z-index: 9999;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      color: #000;
+      padding: 10px 15px;
+    }
+
+    .dropdown-menu a:hover {
+      background: #f3f4f6;
+    }
+  
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background: #1a252f;
+}
+
+/* First Level */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  padding: 0;
+  list-style: none;
+  z-index: 999;
+}
+
+.submenu li a {
+  color: #333;
+}
+
+
+.dropdown:hover > .submenu {
+  display: block;
+}
+
+.submenu-sub li a {
+  padding: 6px 14px;   
+  font-size: 14px;     
+  color: #333;
+  display: block;
+  text-decoration: none;
+}
+.submenu li a:hover {
+  background: #eaeaea;
+}
+
+
+/* Second Level */
+.dropdown-sub {
+  position: relative;
+}
+
+.submenu-sub {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 100%;  
+    right: calc(100% - 2px);
+  background: white;
+  min-width: 230px;
+  max-height: 300px;
+  overflow: auto;
+  padding: 5px 0;
+  list-style: none;
+ z-index: 9998 
+}
+
+
+.dropdown-sub:hover > .submenu-sub {
+  display: block;
+}
+/* 3rd level parent */
+.dropdown-sub-sub {
+  position: relative;
+}
+.dropdown-sub-sub::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:100%;
+  width:20px;
+  height:100%;
+}
+
+
+  </style>
+  
+</head>
+
+<body class="pt-20">
+
+  <!-- NAVBAR -->
+  <header class=" bg-gradient-to-r from-[#243654] via-[#445174] to-[#586389] fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-12">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- LOGO -->
+        <div class="text-white leading-tight">
+          <h1 class="text-2xl font-bold tracking-wider">DBMK & CO</h1>
+          <p class="text-xs tracking-widest text-gray-300">
+            CHARTERED ACCOUNTANTS
+          </p>
+        </div>
+
+        <!-- DESKTOP MENU -->
+        <nav class="hidden lg:flex items-center gap-6 text-sm text-white">
+
+          <a href="../../home.html" class="hover:text-orange-300">Home</a>
+          <a href="../../about.html" class="hover:text-orange-300">About Us</a>
+          <a href="../../team.html" class="hover:text-orange-300">Team</a>
+          <a href="../../gallery.html" class="hover:text-orange-300">Gallery</a>
+
+          <!-- SERVICES -->
+          <ul class="navbar">
+            <li class="dropdown">
+              <a href="#" class="hover:text-orange-300">
+                Services ▾
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="../../services/audit.html">Audit & Assurance</a></li>
+                <li><a href="../../services/companyformation.html">Company Formation</a></li>
+                <li><a href="../../services/Due Diligence.html">Due Diligence</a></li>
+                <li><a href="../../services/Finance.html">Finance</a></li>
+                <li><a href="../../services/managment.html">Management</a></li>
+                <li><a href="../../services/other.html">Other Services</a></li>
+                <li><a href="../../services/Startup Business.html">Startup Business</a></li>
+                <li><a href="../../services/taxation.html">Taxation</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <a href="../../query.html" class="hover:text-orange-300">Query</a>
+          <a href="career.html" class="hover:text-orange-300">Careers</a>
+          <a href="../../contactus.html" class="hover:text-orange-300">Contact Us</a>
+         <nav>
+    <li class="relative group">
+      <span class="cursor-pointer pb-1">
+        Knowledge Bank ▸
+      </span>
+
+      <!-- FIRST DROPDOWN -->
+      <ul class="absolute top-full left-0 bg-white text-black rounded-md shadow-lg w-52 hidden group-hover:block">
+
+        <!-- CALCULATORS -->
+        <li class="relative group/sub px-4 py-2 hover:bg-gray-300 cursor-pointer">
+          Calculators ▸
+
+          <!-- LEFT SIDE OPEN -->
+          <ul class="absolute top-8 right-full mr-1 white rounded-md shadow-lg w-52 hidden group-hover/sub:block">
+           <li class="px-4 py-2 hover:bg-gray-300"><a href="#">GST MRP Calculator</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">GST Rate Calculator</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">GST Calculator</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">Tax Calculator</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">TDS Calculator</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">Net Profit Calculator</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">Net Worth Calculator</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">HRA</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">EMI</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">SIP Calculator</a></li>
+          </ul>
+        </li>
+
+        <li class="relative group/sub px-4 py-2 hover:bg-gray-300">
+          Bulletins ▸
+          <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-52 hidden group-hover/sub:block">
+            <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Notification</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Circular</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Income Tax</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Service Tax</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Central Sales Tax</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Excise Matters</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Customs</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Company Law</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Labour Laws</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">FEMA</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">The LLP Act 2008</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Accounting Standard (INDAS)</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">Others</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">GST</a></li>
+    <li  class="px-4 py-2 hover:bg-gray-300"><a href="#">VAT</a></li>
+          </ul>
+        </li>
+
+<li class="relative group/sub px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  Utilities ▸
+
+  <!-- 2nd Level -->
+  <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub:block">
+
+    <!-- 3rd Level Parent -->
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+     Income Tax Bill 2025 ▸
+      <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+        <li class="px-4 py-2 hover:bg-gray-300">IT Act Vs IT Bill 2025</li>
+        <li class="px-4 py-2 hover:bg-gray-300">IT Bill 2025</li>
+        <li class="px-4 py-2 hover:bg-gray-300">faqs income TAX bill</li>
+        <li class="px-4 py-2 hover:bg-gray-300">faqs income TAX bill genral</li>
+      
+      </ul>
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+     Rates of TDS
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+    TDS Rates for N.R.I u/s 195
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+     Rates of Income Tax
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+    Depreciation Rates Companies Act
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+     Depreciation Rates Income Tax Act
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+     ROC Filing Fees (Cos Act, 2013)
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+    ROC Fee Structure (Cos Act, 2013)
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+   IFSC Codes
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+   MICR Codes
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+    Rates of NSC Interest
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+   Gold and Silver Rates
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+   Rates of Stamp Duty
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+LLP Fees
+      <!-- 3rd Level Menu -->
+     
+    </li>
+
+  </ul>
+</li>
+
+    <li class="relative group/sub px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  Links ▸
+  <ul class="absolute top-3 right-full mr-1 bg-white rounded-md shadow-lg w-64 max-h-80 overflow-y-auto hidden group-hover/sub:block">
+    <li class="px-4 py-2 hover:bg-gray-300">Quick Links</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Important Links</li>
+    <li class="px-4 py-2 hover:bg-gray-300">GST/VAT Links</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Ease of Doing Buisness</li>
+  </ul>
+</li>
+
+       <li class="relative group/sub px-4 py-2 hover:bg-gray-300 cursor-pointer">Acts ▸
+         <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub:block">
+
+    <!-- DIRECT TAX -->
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+      Direct TAX ▸
+
+      <!-- 3rd Level -->
+      <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+        <li class="px-4 py-2 hover:bg-gray-300">Income Tax Act, 1961</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Wealth Tax Act</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Black Money Act</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Benami Property Act</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Finance Act</li>
+
+      </ul>
+    </li>
+  <!-- INDIRECT TAX -->
+<li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  Indirect TAX ▸
+
+  <!-- 3rd Level -->
+  <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+    <li class="px-4 py-2 hover:bg-gray-300">Service Tax (Finance Act, 1994)</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Central Sales Tax Act, 1956</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Central Excise Act, 1944</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Customs Act, 1962</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Entry Tax Act</li>
+
+  </ul>
+</li>
+
+<li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  Corporate TAX ▸
+
+  <!-- 3rd Level -->
+  <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+    <li class="px-4 py-2 hover:bg-gray-300">Companies Act, 2013</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Companies Act,1956</li>
+    <li class="px-4 py-2 hover:bg-gray-300">LLP ACT</li>
+    <li class="px-4 py-2 hover:bg-gray-300">SEBI Act,1992</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Company SEcretaries Act,1980</li>
+
+  </ul>
+</li>
+<li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  VAT Laws ▸
+
+  <!-- 3rd Level -->
+  <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+    <li class="px-4 py-2 hover:bg-gray-300">Delhi value Added Tax Act,2004</li>
+    <li class="px-4 py-2 hover:bg-gray-300">MVAT Act,2002</li>
+    <li class="px-4 py-2 hover:bg-gray-300">West Bengal VAT Act,2003</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Tamilnadu Act,2006</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Karnataka value Added Tax Act ,2003</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Gujarat value Added Tax Act,2003</li>
+    <li class="px-4 py-2 hover:bg-gray-300">UP VAT Act,2008</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Rajshthan value Added Tax Act ,2003</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Punjab value Added Tax Act  </li>
+    <li class="px-4 py-2 hover:bg-gray-300">Haryana value Added Tax Act</li>
+  </ul>
+</li>
+<li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  Other Statues ▸
+
+  <!-- 3rd Level -->
+  <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+    <li class="px-4 py-2 hover:bg-gray-300">ESI Act, 1948</li>
+    <li class="px-4 py-2 hover:bg-gray-300">PF Act, 1952</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Indian Partnership Act, 1932</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Societies Registration Act, 1860</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Competition Act, 2002</li>
+    <li class="px-4 py-2 hover:bg-gray-300">RBI Act, 1934</li>
+    <li class="px-4 py-2 hover:bg-gray-300">MRTP Act, 1969</li>
+    <li class="px-4 py-2 hover:bg-gray-300">RTI Act, 2005</li>
+    <li class="px-4 py-2 hover:bg-gray-300">FEMA, 1999</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Maharashtra RERA</li>
+    <li class="px-4 py-2 hover:bg-gray-300">RERA, 2016</li>
+    <li class="px-4 py-2 hover:bg-gray-300">Insolvency & Bankruptcy Code, 2016</li>
+
+  </ul>
+</li>
+<li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  GST Laws ▸
+
+  <!-- 3rd Level -->
+  <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+    <li class="px-4 py-2 hover:bg-gray-300">IGST Act,2017</li>
+    <li class="px-4 py-2 hover:bg-gray-300">CGST Act,2017</li>
+    <li class="px-4 py-2 hover:bg-gray-300">UTGST Act,2017</li>
+    <li class="px-4 py-2 hover:bg-gray-300">GST (Compensatiton to states)Act</li>
+  </ul>
+</li>
+  </ul>
+       </li>
+
+
+
+      <li class="relative group/sub px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  Rules ▸
+
+  <!-- 2nd Level -->
+  <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub:block">
+
+    <!-- DIRECT TAX RULES -->
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+      Direct Tax Rules ▸
+       <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+        <li class="px-4 py-2 hover:bg-gray-300">Income TAx Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Wealth TAX Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">INcome Declaration Scheme Rules 2016</li>
+      </ul>
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+    InDirect Tax Rules ▸
+    <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+        <li class="px-4 py-2 hover:bg-gray-300">GST Valuation Rules,2016</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Service Tax Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">CST(Delhi)Rules,</li>
+        <li class="px-4 py-2 hover:bg-gray-300">CST(Maharastra)Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Customs Valuation Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Cenvat Credit Rules,2017</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Entry TAX Rules</li>
+      </ul>
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+    Corporate Laws Rules ▸
+    <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+        <li class="px-4 py-2 hover:bg-gray-300">Companies Rules,2014</li>
+        <li class="px-4 py-2 hover:bg-gray-300">LLP Rules,2009</li>
+        <li class="px-4 py-2 hover:bg-gray-300">LLP Winding up Rules,2012</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Cos Unpaid Divdend Rules1978</li>
+      </ul>
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  VAT Laws Rules ▸
+    <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+        <li class="px-4 py-2 hover:bg-gray-300">GST Valuation Rules,2016</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Service Tax Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">CST(Delhi)Rules,</li>
+        <li class="px-4 py-2 hover:bg-gray-300">CST(Maharastra)Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Customs Valuation Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Cenvat Credit Rules,2017</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Entry TAX Rules</li>
+      </ul>
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  Other Statues ▸
+    <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+        <li class="px-4 py-2 hover:bg-gray-300">GST Valuation Rules,2016</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Service Tax Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">CST(Delhi)Rules,</li>
+        <li class="px-4 py-2 hover:bg-gray-300">CST(Maharastra)Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Customs Valuation Rules</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Cenvat Credit Rules,2017</li>
+        <li class="px-4 py-2 hover:bg-gray-300">Entry TAX Rules</li>
+      </ul>
+    <li class="relative group/sub2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  GST Rules ▸
+    <ul class="absolute top-0 right-full mr-1 bg-white rounded-md shadow-lg w-64 hidden group-hover/sub2:block">
+
+        <li class="px-4 py-2 hover:bg-gray-300">CGST Rules,2017</li>
+        <li class="px-4 py-2 hover:bg-gray-300">IGST Rules,2017</li>
+      </ul>
+    
+    </li>
+        </li>
+      </ul>
+       <li class="relative group/sub px-4 py-2 hover:bg-gray-300 cursor-pointer">
+          Forms▸
+
+          <!-- LEFT SIDE OPEN -->
+          <ul class="absolute top-0 right-full mr-1 white rounded-md shadow-lg w-52 hidden group-hover/sub:block">
+           <li class="px-4 py-2 hover:bg-gray-300"><a href="#">GST MRP </a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">GST Rate </a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">GST </a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">Tax </a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">TDS</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">Net Profit </a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">Net Worth </a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">HRA</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">EMI</a></li>
+            <li class="px-4 py-2 hover:bg-gray-300"><a href="#">SIP </a></li>
+          </ul>
+        </li>
+
+    </li>
+  </ul>
+</nav>
+        </nav>
+
+        <!-- MOBILE ICON -->
+        <div class="lg:hidden text-white text-3xl cursor-pointer">
+          ☰
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+</body>
+</html>

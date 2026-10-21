@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+     <div id="navbar"></div>
+
+
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+<div class="max-w-5xl mx-auto my-10 bg-[#fdfbe9] border border-gray-300 shadow-sm font-sans text-sm mt-[150px]">
+  <div class="bg-white py-2 border-b border-gray-300 text-center font-bold text-lg">
+    Income Tax Calculator
+  </div>
+
+  <div class="p-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 items-center">
+      <div class="flex items-center gap-2">
+        <label class="w-32">Assessee Name</label>
+        <input type="text" value="0" class="border border-gray-400 p-1 flex-1 bg-white">
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <label class="w-32 text-right">Financial Year</label>
+        <select class="border border-gray-400 p-1 flex-1 bg-white">
+          <option>2025-2026</option>
+        </select>
+      </div>
+      <div class="hidden md:block"></div>
+
+      <div class="flex items-center gap-2">
+        <label class="w-32">Status of Tax Payer</label>
+        <select class="border border-gray-400 p-1 flex-1 bg-white">
+          <option>Individual</option>
+        </select>
+      </div>
+      <div class="flex items-center gap-2">
+        <label class="w-20 text-right">Gender</label>
+        <select class="border border-gray-400 p-1 flex-1 bg-white">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <div class="flex items-center gap-2 col-span-2">
+        <label class="w-32 text-right">Senior Citizen</label>
+        <select class="border border-gray-400 p-1 flex-1 bg-white">
+          <option>Not Senior Citizen</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="bg-[#d9dee7] p-2 flex justify-center gap-6 border-y border-gray-300">
+      <span class="font-semibold text-xs uppercase tracking-wider">Slab Rate Calculation As Per:</span>
+      <label class="flex items-center gap-1">
+        Old Regime: <input type="radio" name="regime" checked>
+      </label>
+      <label class="flex items-center gap-1">
+        New Regime: <input type="radio" name="regime">
+      </label>
+    </div>
+
+    <div class="text-center font-semibold py-2 bg-white border-b border-gray-300 italic">
+      Statement of Income and Tax
+    </div>
+
+    <div class="w-full">
+      <div class="grid grid-cols-12 bg-[#e8eef6] font-bold border-b border-gray-300">
+        <div class="col-span-10 p-2">Income:</div>
+        <div class="col-span-2 p-2 text-right border-l border-gray-300">Rs.</div>
+      </div>
+
+      <div class="grid grid-cols-12 border-b border-gray-300 items-center">
+        <div class="col-span-10 p-2 pl-6">Salary (Enter taxable salary after standard deduction of Rs.50000)</div>
+        <div class="col-span-2 border-l border-gray-300 h-full">
+          <input type="number" class="w-full h-full p-1 text-right outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 border-b border-gray-300 items-center">
+        <div class="col-span-10 p-2 pl-6">Income from House Property (Enter Income after Standard Deduction Of 30% as per Sec.24(a))</div>
+        <div class="col-span-2 border-l border-gray-300 h-full">
+          <input type="number" class="w-full h-full p-1 text-right outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 border-b border-gray-300 items-center">
+        <div class="col-span-10 p-2 pl-6 font-semibold">Business Income</div>
+        <div class="col-span-2 border-l border-gray-300 h-full">
+          <input type="number" class="w-full h-full p-1 text-right outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 bg-[#e8eef6] border-b border-gray-300 items-center">
+        <div class="col-span-6 p-1 pl-6 font-semibold text-xs">Capital gains</div>
+        <div class="col-span-2 p-1 text-center text-[10px] border-l border-gray-300 font-bold">STT @20%</div>
+        <div class="col-span-2 p-1 text-center text-[10px] border-l border-gray-300 font-bold">Others</div>
+        <div class="col-span-2 border-l border-gray-300"></div>
+      </div>
+
+      <div class="grid grid-cols-12 border-b border-gray-300 items-center h-10">
+        <div class="col-span-6 p-2 pl-10">(a) Short term</div>
+        <div class="col-span-2 border-l border-gray-300 h-full flex items-center justify-center bg-white px-2">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+        <div class="col-span-2 border-l border-gray-300 h-full flex items-center justify-center bg-white px-2">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+        <div class="col-span-2 border-l border-gray-300 h-full bg-[#f1f1f1] flex items-center justify-end px-2">0</div>
+      </div>
+
+      <div class="grid grid-cols-12 bg-[#e8eef6] border-b border-gray-300 items-center">
+        <div class="col-span-6 p-1 border-l"></div>
+        <div class="col-span-2 p-1 text-center text-[10px] border-l border-gray-300 font-bold">@12.5%</div>
+        <div class="col-span-2 p-1 text-center text-[10px] border-l border-gray-300 font-bold">@20%</div>
+        <div class="col-span-2 border-l border-gray-300"></div>
+      </div>
+
+      <div class="grid grid-cols-12 border-b border-gray-300 items-center h-10">
+        <div class="col-span-6 p-2 pl-10">(b) Long term</div>
+        <div class="col-span-2 border-l border-gray-300 h-full flex items-center justify-center bg-white px-2">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+        <div class="col-span-2 border-l border-gray-300 h-full flex items-center justify-center bg-white px-2">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+        <div class="col-span-2 border-l border-gray-300 h-full bg-[#f1f1f1] flex items-center justify-end px-2">0</div>
+      </div>
+
+      <div class="grid grid-cols-12 bg-[#e8eef6] font-semibold border-b border-gray-300">
+        <div class="col-span-12 p-1 pl-6">Income from other sources</div>
+      </div>
+
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-10">(a) Incomes(including interest, Dividend etc.)</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-10">(b) Agriculture Income</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-10">(c) Winning from lotteries 30%</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 bg-[#e8eef6] font-bold border-b border-gray-300">
+        <div class="col-span-12 p-2">Deduction under chapter VIA:</div>
+      </div>
+
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-6 font-semibold">Deduction u/s 80C,80CCC,80CCD</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-6 font-semibold">Deduction u/s 80 D (Mediclaim)</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-6 font-semibold">Deduction u/s 80TTA</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center bg-[#f1f1f1]">
+        <div class="col-span-10 pl-6 font-semibold text-gray-700">Other deduction(Old Regime)</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none bg-transparent">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center bg-[#f1f1f1]">
+        <div class="col-span-10 pl-6 font-semibold text-gray-700">Other deduction(New regime)</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none bg-transparent">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 bg-[#e8eef6] font-bold border-b border-gray-300">
+        <div class="col-span-12 p-2">Detail of Tax Paid:</div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-6">Tax Deducted at Source</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-6">Advance tax paid</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 border-b border-gray-300 h-10 items-center">
+        <div class="col-span-10 pl-6">Self assessment tax paid</div>
+        <div class="col-span-2 border-l border-gray-300 h-full px-2 flex items-center">
+            <input type="number" value="0" class="w-full text-right outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 bg-white h-10 items-center">
+        <div class="col-span-10 text-right pr-4 font-bold">Total Taxpaid</div>
+        <div class="col-span-2 border-l border-gray-300 h-full flex items-center justify-end px-2 font-bold">0</div>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-2 mt-6">
+      <button class="px-4 py-1 border border-gray-600 bg-white hover:bg-gray-100 shadow-sm">Calculate</button>
+      <button class="px-4 py-1 border border-gray-600 bg-white hover:bg-gray-100 shadow-sm">Back</button>
+      <button class="px-4 py-1 border border-gray-600 bg-white hover:bg-gray-100 shadow-sm">Print</button>
+    </div>
+
+    <div class="flex justify-end mt-4">
+      <button class="bg-[#007bff] text-white px-4 py-2 rounded shadow-md text-sm font-semibold">HRA Calculator</button>
+    </div>
+  </div>
+</div>
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+        <div id="navbar"></div>
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+ <div class="w-full bg-white p-2 font-sans text-[#333] mt-[120px] mb-[40px]">
+  <div class="max-w-6xl mx-auto border border-gray-400 rounded bg-[#f1f1f1] relative pt-6 pb-4 px-4 shadow-sm">
+    
+    <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+      <span class="bg-[#1a407a] text-white px-6 py-1 rounded text-[15px] font-semibold">
+        Developers Calculator
+      </span>
+    </div>
+
+    <div class="space-y-1.5 mt-2">
+      
+      <div class="flex flex-col font-light sm:flex-row sm:items-center justify-between gap-2">
+        <label class="text-[19px]  text-gray-700 sm:flex-1 leading-tight">
+          Total Estimated Cost Of Real Estate Project (Only includes the ASR value of the Land and not the actual Purchase Cost of the Land)
+        </label>
+        <input type="text" value="0" class="border border-gray-400 bg-white w-full sm:w-32 p-0.5 px-2 text-right text-[11px] font-bold rounded" />
+      </div>
+
+      <div class="flex flex-col font-light sm:flex-row sm:items-center justify-between gap-2">
+        <label class="text-[19px] text-gray-700 sm:flex-1 leading-tight">
+          Total Cost Incurred As On Date For The Project(Excluding Marketing, Advertising And Brokerage Expenses)
+        </label>
+        <input type="text" value="0" class="border border-gray-400 bg-white w-full sm:w-32 p-0.5 px-2 text-right text-[11px] font-bold rounded" />
+      </div>
+
+      <div class="flex flex-col font-light sm:flex-row sm:items-center justify-between gap-2">
+        <label class="text-[19px] text-gray-700 sm:flex-1 leading-tight">
+          Gross Amount That Can Be Withdrawn From RERA A/C (70%)
+        </label>
+        <input type="text" value="0" class="border border-gray-400 bg-white w-full sm:w-32 p-0.5 px-2 text-right text-[11px] font-bold rounded" />
+      </div>
+
+      <div class="flex flex-col font-light sm:flex-row sm:items-center justify-between gap-2">
+        <label class="text-[19px] text-gray-700 sm:flex-1 leading-tight">
+          Amount Withdrawn Till Date For The Project
+        </label>
+        <input type="text" value="0" class="border border-gray-400 bg-white w-full sm:w-32 p-0.5 px-2 text-right text-[11px] font-bold rounded" />
+      </div>
+
+      <div class="flex flex-col font-light sm:flex-row sm:items-center justify-between gap-2">
+        <label class="text-[19px] text-gray-700 sm:flex-1 leading-tight">
+          Net Amount That Can Be Withdrawn From The Project
+        </label>
+        <input type="text" value="0" class="border border-gray-400 bg-white w-full sm:w-32 p-0.5 px-2 text-right text-[11px] font-bold rounded" />
+      </div>
+
+      <div class="flex justify-center pt-3">
+        <button class="bg-[#007bff] text-white px-4 py-1 rounded text-[15px] font-medium shadow-sm active:bg-blue-700">
+          Calculate
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+</body>
+</html>

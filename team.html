@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.scroll-animate.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+  <section class="">
+  </section>
+
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+
+<section class="w-full h-[100px] bg-gradient-to-r from-[#243554] to-[#6b7294] mt-[80px]">
+  <div class="max-w-7xl mx-auto px-12 flex gap-4 pt-[25px]">
+
+  
+    <span class="w-[3px] h-10 bg-white"></span>
+
+ 
+    <h1 class="text-white text-4xl font-semibold ">
+      PARTNERS
+    </h1>
+  </div>
+</section>
+
+
+
+<div class="bg-[#f5f6fa] px-6">
+  <div class="max-w-[92%] mx-auto mt-10">
+
+    <div class="flex rounded-xl bg-[#2f3454]">
+
+      <button
+        class="flex-1 bg-white text-[#2f3454] font-semibold py-6
+               border-l-4 border-t-4 border-r-4 border-[#2f3454]
+               relative z-10 rounded-tl-xl text-lg">
+        Partners
+      </button>
+
+      <button
+        class="flex-1 bg-[#2f3454] text-white font-medium py-3
+               border-t border-r border-[#3b4063]
+               hover:bg-[#3b4063] transition text-lg">
+        Associates
+      </button>
+
+      <button
+        class="flex-1 bg-[#2f3454] text-white font-medium py-3
+               border-t border-[#3b4063]
+               hover:bg-[#3b4063] transition rounded-tr-xl text-lg">
+        Team Members
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<section class="bg-white py-10 px-6">
+  <div class=" mx-auto px-14">
+
+   
+    <h2 class="text-xl font-bold text-indigo-700 uppercase ">
+      Partners
+    </h2>
+
+    <hr class="border-dashed border-gray-300 my-4">
+
+
+   <div class="flex flex-col md:flex-row gap-0">
+
+
+  <div class="flex-shrink-0">
+    <img 
+      src="./images/sachin.jpg"
+      alt="CA Sachin Dharwal"
+      class="w-40 h-50 rounded shadow mr-4"
+    >
+  </div>
+
+ 
+  <div class="flex-1">
+
+    <h3 class="text-xl font-semibold text-gray-900">
+      CA Sachin Dharwal
+    </h3>
+
+    <p class="text-sm font-semibold text-gray-600 mt-1">
+      Partner
+    </p>
+
+    <p class="text-gray-700 mt-4 leading-relaxed text-sm">
+      CA Sachin Dharwal is a highly experienced Chartered Accountant based in Ahmedabad, Gujarat, 
+      with a strong specialization in Indirect Taxation, particularly Goods and Services Tax (GST) 
+      and Service Tax. With a deep understanding of regulatory frameworks and a proactive professional 
+      approach, he has consistently delivered reliable and effective solutions to clients across 
+      various industries.
+    </p>
+
+    <p class="text-gray-700 mt-3 leading-relaxed text-sm">
+      Over the years, CA Sachin Dharwal has built a diverse client base spread across Ahmedabad, 
+      Gandhinagar, Jamnagar, Delhi, Pune, Mumbai, and several other cities across India. His dedication 
+      to professional excellence, ethical practices, and client satisfaction has earned him long-term 
+      trust and recognition in the field of taxation and compliance.
+    </p>
+
+    <h4 class="font-semibold text-gray-900 mt-6">
+      Areas of Expertise
+    </h4>
+
+    <ul class="list-disc pl-5 mt-2 text-sm text-gray-700 space-y-2">
+      <li>
+        <span class="font-bold">
+         Indirect Tax Consulting and Representation: 
+        </span>
+        <span class="text-[18px]">
+       Providing strategic guidance and representation in GST and Service Tax matters, including consulting and appeals.</span>
+      </li>
+
+      <li>
+        <span class="font-bold ">
+   Internal Audits: 
+        </span>
+        <span class="text-[18px]">Conducting thorough and insightful internal audits for corporate clients to ensure compliance and operational efficiency.</span>
+      </li>
+
+      <li>
+        <span class="font-bold">
+         Financial Advisory and Consulting Services:
+        </span>
+        <span class="text-[18px]">
+        Offering expert financial planning and advisory services to help businesses achieve their goals.</span>
+      </li>
+    </ul>
+     <h4 class="font-bold text-gray-900 mt-6">
+       Professional Contributions
+    </h4>
+    <p class="mt-[15px]">
+      Mr. Dharwal actively contributes to the professional community through his involvement with the <span class="font-bold">Ahmedabad branch of The Institute of Chartered Accountants of India (ICAI).</span> His roles in various sub-committees demonstrate his dedication to the advancement of the accounting profession:
+    </p>
+
+
+     <ul class="list-disc pl-5 mt-2 text-sm text-gray-700 space-y-2 mt-[20px]">
+      <li>
+        <span class="font-bold text-[19px]">
+     FY 2018-2019:
+        </span>
+        <span class="text-[18px] text-[black]">
+           Member, CPE Committee
+        </span>
+       
+      <li>
+        <span class="font-bold text-[19px] ">
+FY 2019-2020: 
+        </span>
+        <span class="text-[18px] text-[black]">Member, Indirect Tax Committee</span>
+      </li>
+
+      <li>
+        <span class="font-bold text-[19px]">
+         FY 2021-2022:
+        </span>
+        <span class="text-[18px] text-[black]">Member, Sports Committee</span>
+               </li>
+               <li>
+      
+        <span class="font-bold text-[19px]">
+      FY 2022-2023:
+        </span>
+        <span class="text-[18px] text-[black]">
+       Member, Indirect Tax Committee</span>
+ </li>
+    </ul>
+
+    <div class="beyoundwork flex flex-col gap-[20px] mt-[15px]">
+     <h4 class="font-bold text-gray-900 mt-6]">
+      Beyond Work
+    </h4>
+    <p class="text-[16px]">Outside of his professional pursuits, Mr. Dharwal is an avid cricket enthusiast. His passion for the sport has been recognized through multiple awards, a testament to his talent and dedication both on and off the field.</p>
+    <p class="text-[16px]">With a client-centric approach and an unwavering commitment to excellence, CA Sachin Dharwal continues to empower businesses with innovative solutions, reliable guidance, and unparalleled professionalism.</p>
+    </div>
+  </div>
+</div>
+
+
+
+ <hr class="border border-gray-300 my-4">
+
+
+
+
+   <div class="flex flex-col md:flex-row gap-0">
+
+
+  <div class="flex-shrink-0">
+    <img 
+      src="./images/Ronak.jpg"
+      alt="CA Sachin Dharwal"
+      class="w-40 h-50 rounded shadow mr-4"
+    >
+  </div>
+
+ 
+  <div class="flex-1">
+
+    <h3 class="text-xl font-semibold text-gray-900">
+     
+       CA Ronak Baser
+    </h3>
+
+    <p class="text-sm font-semibold text-gray-600 mt-1">
+      Partner
+    </p>
+
+    <p class="text-gray-700 mt-4 leading-relaxed text-[16.9px]">
+    CA Ronak Baser, a native of Vadali, Gujarat, is a highly skilled Chartered Accountant specializing in Corporate Tax and GST (Goods and Services Tax). With a deep understanding of corporate and tax laws, Mr. Baser has established himself as a trusted advisor for businesses across India. Mr. Baser's professional services are trusted by clients across Ahmedabad, Vadali, Jamnagar, Patan, Viramgam, Delhi, and various other cities in India. His commitment to delivering tailored solutions has made him a preferred advisor for businesses of all sizes.
+    </p>
+
+
+    <h4 class="font-bold text-gray-900 mt-6">
+      Areas of Expertise
+    </h4>
+
+    <ul class="list-disc pl-5 mt-2 text-sm text-gray-700 space-y-2">
+      <li>
+        <span class="font-bold text-[16px]">
+         Corporate Tax Advisory:
+        </span>
+        <span class="text-[18px]">
+      Providing comprehensive tax planning and compliance services for corporate clients.</span>
+      </li>
+
+      <li>
+        <span class="font-bold text-[16px]">
+GST Consulting
+        </span>
+        <span class="text-[18px]"> Offering strategic guidance and solutions for GST-related matters, ensuring clients remain compliant with evolving regulations.</span>
+      </li>
+
+      <li>
+        <span class="font-bold text-[16px]">
+        Trademark Registration: 
+        </span>
+        <span class="text-[18px]">
+     Helping businesses secure their intellectual property rights through trademark registration services.</span>
+      </li>
+      <li>
+        <span class="font-bold text-[16px]">
+          Audit of Co-operative Banks:
+        </span>
+        <span class="text-[17px]">
+           Conducting audits for cooperative banks with a focus on accuracy, compliance, and financial integrity.
+        </span>
+      </li>
+    </ul>
+
+    <div class="beyoundwork flex flex-col gap-[20px] mt-[15px]">
+     <h4 class="font-bold text-gray-900 mt-6]">
+      Beyond Work
+    </h4>
+    <p class="text-[16px]">Outside of his professional commitments, Mr. Baser enjoys exploring historic places, reflecting his deep appreciation for culture and heritage. Additionally, his love for music offers him a creative outlet and a source of relaxation.</p>
+    <p class="text-[16px]">With an unwavering dedication to client success and a solution-oriented approach, CA Ronak Baser continues to empower businesses by offering expert guidance, ensuring compliance, and fostering growth. His extensive expertise and client-centric focus make him an invaluable partner for any organization.</p>
+    </div>
+  </div>
+</div>
+
+
+ <hr class="border border-gray-300 my-4">
+
+  <div class="flex flex-col md:flex-row gap-0">
+
+
+  <div class="flex-shrink-0">
+    <img 
+      src="./images/Jimmy.jpg"
+      alt="CA Sachin Dharwal"
+      class="w-40 h-50 rounded shadow mr-4"
+    >
+  </div>
+
+ 
+  <div class="flex-1">
+
+    <h3 class="text-xl font-semibold text-gray-900">
+     
+    CA Jimmy Modi
+    </h3>
+
+    <p class="text-sm font-semibold text-gray-600 mt-1">
+      Partner
+    </p>
+
+    <p class="text-gray-700 mt-4 leading-relaxed text-[16.9px]">
+  CA Jimmy Modi, originally from Patan, Gujarat, is a proficient Chartered Accountant with expertise in both direct and indirect taxation, as well as audit and financial consulting. With a strong foundation in taxation and entity formation, Mr. Modi has been instrumental in providing strategic guidance and compliance support to his clients. Mr. Modi serves clients across Patan, Deesa, Unjha, Ahmedabad, and nearby cities, demonstrating a strong regional presence and a commitment to client success. Mr. Modi is skilled in the formation of various types of entities, assisting clients in establishing businesses with ease while ensuring compliance with applicable laws and regulations.</p>
+
+    <h4 class="font-bold text-gray-900 mt-8">
+      Areas of Expertise
+    </h4>
+
+    <ul class="list-disc pl-5 mt-2 text-sm text-gray-700 space-y-2">
+      <li>
+        <span class="font-bold text-[16px]">
+        Proprietary Audit and Taxation:
+        </span>
+        <span class="text-[18px]">
+      Delivering tailored solutions for proprietary concerns, ensuring compliance and efficiency in financial operations.</span>
+      </li>
+
+      <li>
+        <span class="font-bold text-[16px]">
+Consulting for Government Organizations:
+        </span>
+        <span class="text-[18px]">  Advising government entities on financial management, taxation, and regulatory compliance.</span>
+      </li>
+
+      <li>
+        <span class="font-bold text-[16px]">
+Audit of Banks and Financial Institutions: 
+        </span>
+        <span class="text-[18px]">
+    Conducting audits to ensure financial transparency and regulatory adherence for banking and financial entities.</span>
+      </li>
+      <li>
+        <span class="font-bold text-[16px]">
+      Financial Advisory and Consulting:
+        </span>
+        <span class="text-[17px]">
+         Offering comprehensive financial planning and advisory services to help clients achieve their business goals.
+      </li>
+    </ul>
+
+    <div class="beyoundwork flex flex-col gap-[20px] mt-[15px]">
+     <h4 class="font-bold text-gray-900 mt-6]">
+      Beyond Work
+    </h4>
+    <p class="text-[16px]">A cricketer, Mr. Modi regularly participates in the sport, showcasing his team spirit and passion for the game. Additionally, he is a technocrat, with an in-depth understanding of information technology, which he integrates into his professional practice to deliver innovative and efficient solutions for his clients.</p>
+    <p class="text-[16px]">CA Jimmy Modi is committed to empowering clients with his extensive expertise in taxation, audit, and financial consulting. His dynamic approach, combined with his technical acumen and client-centric philosophy, makes him a trusted advisor for businesses and organizations across sectors.</p>
+    </div>
+  </div>
+</div>
+
+
+
+ <hr class="border border-gray-300 my-4">
+
+
+
+ <div class="flex flex-col md:flex-row gap-0">
+
+
+  <div class="flex-shrink-0">
+    <img 
+      src="./images/Harsh.jpg"
+      alt="CA Sachin Dharwal"
+      class="w-40 h-50 rounded shadow mr-4"
+    >
+  </div>
+
+ 
+  <div class="flex-1">
+
+    <h3 class="text-xl font-semibold text-gray-900">
+     
+    CA Jimmy Modi
+    </h3>
+
+    <p class="text-sm font-semibold text-gray-600 mt-1">
+      Partner
+    </p>
+
+    <p class="text-gray-700 mt-4 leading-relaxed text-[16.9px]">
+  Harsh Kharadi, a seasoned professional based in Himatnagar, Gujarat, brings a wealth of experience in the fields of Audit and Corporate Tax. With a career spanning multiple geographies, he predominantly caters to clients located in Ahmedabad, Surat, Delhi, Himatnagar and various other cities throughout India. His expertise lies in delivering tailored solutions across a diverse portfolio of clients, ranging from corporations to trusts and co-operative societies.</p>
+
+    <h4 class="font-bold text-gray-900 mt-8">
+      Areas of Expertise
+    </h4>
+
+    <ul class="list-disc pl-5 mt-2 text-sm text-gray-700 space-y-2">
+      <li>
+        <span class="font-bold text-[16px]">
+       Direct Tax:
+        </span>
+        <span class="text-[18px]">
+      Strategizing tax compliance and planning to optimize outcomes for clients.</span>
+      </li>
+
+      <li>
+        <span class="font-bold text-[16px]">
+Company Audits:
+        </span>
+        <span class="text-[18px]"> Conducting detailed audits that ensure transparency and compliance with regulatory frameworks.</span>
+      </li>
+
+      <li>
+        <span class="font-bold text-[16px]">
+Trusts and NGOs Consulting: 
+        </span>
+        <span class="text-[18px]">
+Offering advisory services for trusts and non-governmental organizations, including tax structuring and operational guidance.</span>
+      </li>
+      <li>
+        <span class="font-bold text-[16px]">
+     Co-operative Societies Consulting
+        </span>
+        <span class="text-[17px]">
+        Providing end-to-end advisory for co-operative societies, ensuring they navigate financial and legal complexities efficiently.</span>
+      </li>
+    </ul>
+
+    <div class="beyoundwork flex flex-col gap-[20px] mt-[15px]">
+     <h4 class="font-bold text-gray-900 mt-6]">
+      Beyond Work
+    </h4>
+    <p class="text-[16px]">Beyond his professional endeavors, Harsh is a passionate musician who finds solace in playing musical instruments. An avid traveler, he embraces every opportunity to explore new places and cultures, enriching his perspective and creativity.</p>
+    <p class="text-[16px]">CA Harsh Kharadi is dedicated to delivering exceptional value to his clients by leveraging his expertise and fostering long-term professional relationships built on trust, integrity, and excellence. His multifaceted approach ensures his clients receive innovative solutions tailored to their unique needs.</p>
+    </div>
+  </div>
+</div>
+ </section>
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider();
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const targets = document.querySelectorAll(
+    "section, section > div, section > div > div"
+  );
+
+  targets.forEach(el => {
+    el.classList.add("scroll-animate");
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  targets.forEach(el => observer.observe(el));
+});
+</script>
+
+
+
+</body>
+</html>

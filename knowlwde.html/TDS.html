@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+       <div id="navbar"></div>
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
+<div class=" mx-auto  bg-[#f1f1f1] border border-gray-300 shadow-sm font-sans text-sm pb-10 mt-[150px] mb-[80px]">
+  
+  <div class="flex justify-center -mt-4 mb-6">
+    <div class="bg-[#1e407a] text-white px-8 py-2 rounded-md font-semibold shadow-md">
+      TDS Calculator
+    </div>
+  </div>
+
+  <div class="px-10 space-y-4 ">
+    
+    <div class="flex items-center gap-2">
+      <label class="w-20 text-right font-medium">Section</label>
+      <select class="border border-gray-400 p-1 w-64 bg-white focus:outline-none">
+        <option>Select</option>
+      </select>
+    </div>
+
+    <div class="flex items-center gap-2 ml-20">
+      <label class="font-medium">PAN quoted by deductee</label>
+      <select class="border border-gray-400 p-1 w-20 bg-white focus:outline-none">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <label class="w-32 text-right font-medium">Rate:</label>
+      <div class="w-24 border border-gray-400 bg-white p-1 text-center font-bold">
+        0%
+      </div>
+      <input type="range" class="flex-1 h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-[#1e407a]">
+    </div>
+
+    <div class="flex items-center gap-4">
+      <label class="w-32 text-right font-medium">Amount:</label>
+      <div class="w-24 border border-gray-400 bg-white p-1 text-center font-bold">
+        0
+      </div>
+      <input type="range" class="flex-1 h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-[#1e407a]">
+    </div>
+
+    <hr class="border-gray-400 my-4">
+
+    <div class="flex items-center gap-4">
+      <label class="w-32 text-right font-medium">Tax:</label>
+      <div class="w-24 border border-gray-400 bg-white p-1 text-center font-bold">
+        0
+      </div>
+    </div>
+
+    <div class="border-t border-gray-400 mt-6 pt-1">
+      <div class="border-t border-gray-400"></div>
+    </div>
+
+  </div>
+</div>
+    
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+</body>
+</html>

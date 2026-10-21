@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DBMK & Co - Our Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+ <style>
+.slide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.animate-spin-slow {
+  animation: spin 40s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+</style>
+
+<style>
+  .stats-animate {
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+  }
+
+  .stats-animate.show {
+    transform: scale(1);
+    opacity: 1;
+  }
+</style>
+
+
+<style>
+  .pie-hover {
+    transition: transform 0.6s ease;
+  }
+
+  .pie-hover:hover {
+    transform: rotate(180deg);
+  }
+</style>
+  
+  
+<style>
+  .team-card .team-info {
+    background-color: #1f3556;
+    transition: background-color 0.3s ease;
+  }
+
+  .team-card:hover .team-info {
+    background-color: #f9b27d;
+  }
+</style>
+
+<style>
+  .industry-box {
+  width: 100%;
+  max-width:180px;
+  padding: 8px 6px;
+  border: 2px solid #999;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.industry-container {
+  max-width: calc((180px * 6) + (10px * 5));
+  margin: 0 auto;
+}
+
+
+ .industry-box img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+   transition: transform 0.25s ease;
+}
+
+.industry-box:hover img {
+  transform: scale(1.1);
+}
+
+  .industry-box p {
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+.industry-box:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: #2563eb; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+}
+.animate-spin-slow {
+  animation: spin 40s linear infinite;
+}
+
+
+</style>
+
+</head>
+
+<body class="text-white">
+ 
+  <div id="navbar"></div>
+
+  <section class="">
+  </section>
+
+<section class="relative h-screen overflow-hidden">
+
+  <div id="slider" class="relative w-full h-full">
+
+    <!-- SLIDE 1 -->
+   <div class="slide absolute inset-0 transition-opacity duration-700">
+
+
+      <div class="absolute inset-0 bg-gradient-to-r from-[#283958] via-[#555F85] to-[#5c6fa3]"></div>
+
+    <div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+  <img src="images/globe.png" class="w-[500px] animate-spin-slow" alt="Globe">
+</div>
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white">
+        <h1 class="text-5xl font-semibold mb-4">Our Team</h1>
+        <p class="max-w-3xl text-[15px] mb-8">
+          The strength of DBMK & Co. lies in its highly motivated and skilled team of professionals, who bring a unique blend of expertise, innovation, and commitment to every client engagement.
+        </p>
+     <button
+  onclick="window.location.href='about.html'"
+  class="border-2 border-white px-9 py-2 rounded-full hover:bg-[#F2B179] hover:text-slate-900 transition">
+  Read More
+</button>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+  <div class="slide absolute inset-0 transition-opacity duration-700">
+
+      <div class="absolute inset-0 bg-gradient-to-r from-[#283958] via-[#555F85] to-[#5c6fa3]"></div>
+
+     <div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+  <img src="images/globe.png" class="w-[500px] animate-spin-slow" alt="Globe">
+</div>
+
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white">
+        <h1 class="text-5xl font-semibold mb-4">
+          Welcome to D B M K & CO
+        </h1>
+        <p class="max-w-3xl text-[15px] mb-8">
+          DBMK & Co. is a distinguished Chartered Accountancy firm, established in 2017 through the strategic merger of four renowned firms: Jimmy Modi & Associates, Dharwal & Associates, Kharadi & Associates, and R. B. Baser & Associates.
+        </p>
+    <button
+  onclick="window.location.href='about.html'"
+  class="border-2 border-white px-9 py-2 rounded-full hover:bg-[#F2B179] hover:text-slate-900 transition">
+  Read More
+</button>
+
+      </div>
+    </div>
+
+  </div>
+
+  <button onclick="prevSlide()"
+  class="absolute left-6 top-1/2 -translate-y-1/2 text-white text-4xl z-50">
+  ❮
+</button>
+
+<button onclick="nextSlide()"
+  class="absolute right-6 top-1/2 -translate-y-1/2 text-white text-4xl z-50">
+  ❯
+</button>
+</section>
+
+<section class="bg-white py-14 sm:py-16 lg:py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-700">
+
+    <div class="mb-8 sm:mb-10">
+      <div class="flex items-center gap-3 mb-2">
+        <p class="text-xs text-[black] sm:text-sm tracking-widest uppercase">
+          About
+        </p>
+        <div class="w-20 sm:w-32 h-[1px] bg-[#F2A15A]"></div>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-wider text-[#F2A15A]">
+        DBMK&CO
+      </h2>
+    </div>
+
+
+    <p class="text-sm sm:text-base mb-5 sm:mb-6 leading-relaxed">
+      <span class="font-semibold">DBMK & CO</span> is a distinguished Chartered
+      Accountancy firm, established in 2017 through the strategic merger of four
+      renowned firms. This unification brought together decades of expertise,
+      creating a strong foundation for delivering exceptional services.
+    </p>
+
+    <p class="text-sm sm:text-base leading-relaxed">
+      Since its inception, DBMK & Co. has built a stellar reputation for
+      providing knowledge-driven legal and financial solutions across GST,
+      Income Tax, Companies Act, LLP Act, and more.
+    </p>
+
+  </div>
+</section>
+
+<section class="bg-gradient-to-r from-[#2b3f63] via-[#6f6a6a] to-[#f2b179] py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white">
+
+      <div>
+        <h2 class="text-4xl font-bold counter" data-target="10">0</h2>
+        <p class="mt-2 text-sm">Years of Experience</p>
+      </div>
+
+      <div>
+        <h2 class="text-4xl font-bold counter" data-target="1200">0</h2>
+        <p class="mt-2 text-sm">Satisfied Clients</p>
+      </div>
+
+      <div>
+        <h2 class="text-4xl font-bold">
+          <span class="counter" data-target="80">0</span>%
+        </h2>
+        <p class="mt-2 text-sm">Litigation Success Ratio</p>
+      </div>
+
+      <div>
+        <h2 class="text-4xl font-bold">
+          <span class="counter" data-target="5000">0</span>Cr+
+        </h2>
+        <p class="mt-2 text-sm">Turnover Compliances</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="w-full bg-gradient-to-r from-[#243554] via-[#4B577C] to-[#69719A] mt-5 py-16">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-24">
+
+    <div class="flex items-center gap-3">
+      <span class="text-sm sm:text-base font-semibold text-white tracking-widest">
+        SERVICES
+      </span>
+      <div class="w-20 sm:w-32 h-[1px] bg-white mt-1"></div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mt-2">
+      WHAT WE DO
+    </h2>
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+
+
+      <div class="bg-white rounded-2xl p-5 flex gap-4 items-start">
+        <img src="./images/pie-chart_6403424.png" class="w-12 h-12 sm:w-14 sm:h-14 pie-hover" />
+        <div>
+          <h3 class="font-semibold text-base text-[#243554]">Audit & Assurance</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Statutory Audit, Stock Audits, Concurrent Audits, Internal Audit...
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 flex gap-4 items-start">
+        <img src="./images/pie-chart_6403424.png" class="w-12 h-12 sm:w-14 sm:h-14 pie-hover" />
+        <div>
+          <h3 class="font-semibold text-base text-[#243554]">Company Formation</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Formation of new company, Registration with authorities...
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 flex gap-4 items-start">
+        <img src="./images/pie-chart_6403424.png" class="w-12 h-12 sm:w-14 sm:h-14 pie-hover" />
+        <div>
+          <h3 class="font-semibold text-base text-[#243554]">Due Diligence</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Financial due diligence, feasibility study, valuation...
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 flex gap-4 items-start">
+        <img src="./images/pie-chart_6403424.png" class="w-12 h-12 sm:w-14 sm:h-14 pie-hover" />
+        <div>
+          <h3 class="font-semibold text-base text-[#243554]">Finance</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Long term & short term fund procurement, strategic planning...
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 flex gap-4 items-start">
+        <img src="./images/pie-chart_6403424.png" class="w-12 h-12 sm:w-14 sm:h-14 pie-hover" />
+        <div>
+          <h3 class="font-semibold text-base text-[#243554]">Management Consultancy</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            Organization system development & implementation of controls...
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 flex gap-4 items-start">
+        <img src="./images/pie-chart_6403424.png" class="w-12 h-12 sm:w-14 sm:h-14 pie-hover" />
+        <div>
+          <h3 class="font-semibold text-base text-[#243554]">Taxations</h3>
+          <p class="text-sm text-gray-600 mt-1">
+            GST impact analysis, Tax planning & Income tax returns...
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-16 px-[100px] bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+
+
+    <div class="mb-10">
+      <div class="flex items-center gap-3">
+        <p class="text-sm tracking-widest text-[black]">TEAM</p>
+      <div class="w-20 sm:w-32 h-[1px] bg-[#F2A15A]"></div>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-orange-300 mt-1">
+        OUR TEAM
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    
+      <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        <img src="./images/Jimmy.jpg" class="w-full h-[300px] object-cover">
+        <div class="bg-[#1f3556] text-center py-4">
+          <h3 class="text-white font-semibold text-lg">CA SACHIN DHARWAL</h3>
+          <p class="text-gray-300 text-sm">Partner</p>
+        </div>
+      </div>
+
+      <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        <img src="./images/Harsh.jpg" class="w-full h-[300px] object-cover">
+        <div class="bg-[#1f3556] text-center py-4">
+          <h3 class="text-white font-semibold text-lg">CA RONAK BASER</h3>
+          <p class="text-gray-300 text-sm">Partner</p>
+        </div>
+      </div>
+
+      <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        <img src="./images/Ronak.jpg" class="w-full h-[300px] object-cover">
+        <div class="bg-[#1f3556] text-center py-4">
+          <h3 class="text-white font-semibold text-lg">CA JIMMY MODI</h3>
+          <p class="text-gray-300 text-sm">Partner</p>
+        </div>
+      </div>
+
+      <div class="rounded-lg overflow-hidden shadow-md bg-white">
+        <img src="./images/sachin.jpg" class="w-full h-[300px] object-cover">
+        <div class="bg-[#1f3556] text-center py-4">
+          <h3 class="text-white font-semibold text-lg">CA HARSH KHARADI</h3>
+          <p class="text-gray-300 text-sm">Partner</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6"> 
+
+    <div class="mb-10">
+      <div class="flex items-center gap-4">
+        <p class="text-sm font-medium tracking-widest text-[black] uppercase ml-[53px]">
+          Industries
+        </p>
+     <div class="w-20 sm:w-32 h-[1px] bg-[#F2A15A]"></div>
+      </div>
+      <h2 class="text-4xl font-bold text-orange-300 mt-2 ml-[50px]">
+        OUR INDUSTRIES
+      </h2>
+    </div>
+
+
+<div class="industry-container">
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-[10px] gap-y-[12px]">
+
+
+      <div class="industry-box">
+        <img src="images/bank_8176399.png" class="icon w-8 h-8 " />
+        <p>Banking</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/steel_16346895.png" class="icon w-8 h-8 " />
+        <p>Steel & Metals</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/charging_15863191.png" class="icon w-8 h-8 " />
+        <p>Power & Equipment</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/textile_18100271.png" class="icon w-8 h-8" />
+        <p>Textile</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/burger_17324240.png" class="icon w-8 h-8" />
+        <p>Food</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/medical_4323633.png" class="icon w-8 h-8" />
+        <p>Pharmaceuticals</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/intranet_14594114.png" class="icon w-8 h-8" />
+        <p>IT & ITES</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/trip_16842354.png" class="icon w-8 h-8" />
+        <p>Tourisms</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/package_1067555.png" class="icon w-8 h-8" />
+        <p>Packaging</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/plastic_4380310.png" class="icon w-8 h-8" />
+        <p>Plastics</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/cogwheel_16174911.png" class="icon w-8 h-8" />
+        <p>Machinery & Parts</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/chemistry_1016568.png" class="icon w-8 h-8" />
+        <p>Chemicals</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/room-service_12212350.png" class="icon w-8 h-8" />
+        <p>Hospitality</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/./real estate.png" class="icon w-8 h-8" />
+        <p>Real Estate</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/Renewable Energy.png" class="icon w-8 h-8" />
+        <p>Renewable Energy</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/Health.png" class="icon w-8 h-8" />
+        <p>Health</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/./logistics.png" class="icon w-8 h-8" />
+        <p>Logistic</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/./wood.png" class="icon w-8 h-8" />
+        <p>Wood & Adhesives</p>
+      </div>
+
+      <div class="industry-box">
+        <img src="./images/./necklace.png" class="icon w-8 h-8" />
+        <p>Jewellery</p>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gradient-to-r from-[#1f2f4d] to-[#6c7193] py-16 px-4 pt-[100px]">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-8">
+
+    
+    <div class="text-white flex-1 pr-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-sm tracking-widest font-medium pl-[80px]">CAREER</span>
+        <span class="w-12 h-px bg-white"></span>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 pl-[80px]">
+        WORK WITH US
+      </h2>
+
+    <p class="text-sm md:text-[15px] text-white pl-[80px] pb-[50px]">
+        We nurture and cultivate a sense pride in the work and create team leaders.
+        Your growth chart will be governed by well-defined transparent policies of the
+        firm. Apply via the form given below and meet us for face to face interview.
+      </p>
+    </div>
+
+    <div class="flex-shrink-0">
+      <a href="#"
+         class="inline-flex items-center justify-center px-6 py-3 rounded-full
+                bg-white text-[#1f2f4d] font-semibold
+                transition-all duration-300 mt-[70px] mr-[100px]
+                hover:text-[orange] hover:shadow-xl">
+        JOIN US
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-7xl mx-auto">
+
+ 
+    <div class="mb-14">
+      <div class="flex items-center gap-4 mb-2">
+        <span class="text-sm tracking-widest text-[black] pl-[80px]">CONTACT</span>
+       <div class="w-20 sm:w-32 h-[1px] bg-[#F2A15A]"></div>
+      </div>
+
+      <h2 class="text-4xl font-semibold text-orange-400 pl-[78px]">
+        GET IN TOUCH
+      </h2>
+    </div>
+
+  
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-y-16 gap-x-2 items-start">
+
+
+     
+      <div class="space-y-10">
+
+    <div class="flex gap-5 pl-[78px]">
+  <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+    <i class="ri-map-pin-fill text-2xl text-orange-400"></i>
+  </div>
+
+  <div>
+    <h4 class="text-black font-bold text-2xl">Location:</h4>
+    <p class="text-gray-600 text-[18px] leading-relaxed max-w-sm">
+      8/A, 8th Floor, Vardan Tower, Nr. Saviour Hospital,
+      Navrangpura, Ahmedabad, Gujarat - 380009.
+    </p>
+  </div>
+</div>
+
+
+      <div class="flex gap-5 pl-[78px]">
+  <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+    <i class="ri-phone-fill text-2xl text-orange-400"></i>
+  </div>
+
+  <div>
+    <h4 class="text-black font-bold text-2xl">Call:</h4>
+    <p class="text-gray-600 text-[18px] leading-relaxed">
+      +91-9033883422
+    </p>
+  </div>
+</div>
+
+    <div class="flex gap-5 pl-[78px]">
+  <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+    <i class="ri-mail-fill text-2xl text-orange-400"></i>
+  </div>
+
+  <div>
+    <h4 class="text-black font-bold text-2xl">Email:</h4>
+    <p class="text-gray-600 text-[18px] leading-relaxed">
+      casachin@dbmk.in
+    </p>
+  </div>
+</div>
+
+
+      </div>
+
+   <form class="space-y-6 pr-[200px]">
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+          <input type="text" placeholder="Your Name"
+            class="w-[230px] text-[black] border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-400 ">
+
+          <input type="number" placeholder="Your Number"
+            class="w-[280px] text-[black] border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-400 ">
+        </div>
+
+        <input type="email" placeholder="Your Email ID"
+          class="w-[521px] text-[black] border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-blue-40 ">
+
+        <textarea rows="4" placeholder="Type Your Message.."
+          class="w-[521px] text-[black] border border-gray-300 px-4 py-3 text-sm resize-none focus:outline-none focus:border-blue-400"></textarea>
+
+        <button
+          class="bg-orange-300 text-white ml-[200px] px-8 py-3 rounded-full text-sm font-medium
+                 hover:bg-orange-500 transition">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+ <div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return; 
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const animElements = document.querySelectorAll(
+    "section .grid > div, section .industry-box, section .team-card, section .stats-animate"
+  );
+
+
+  animElements.forEach(el => {
+    el.classList.add(
+      "scale-90",
+      "translate-y-10",
+      "opacity-0",
+      "transition-all",
+      "duration-700",
+      "ease-out"
+    );
+  });
+
+  function animateScroll() {
+    const viewportHeight = window.innerHeight;
+
+    animElements.forEach((el, index) => {
+      const rect = el.getBoundingClientRect();
+
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        setTimeout(() => {
+          el.classList.remove("scale-90", "translate-y-10", "opacity-0");
+          el.classList.add("scale-105", "translate-y-0", "opacity-100");
+
+         
+          setTimeout(() => {
+            el.classList.remove("scale-105");
+            el.classList.add("scale-100");
+          }, 200);
+        }, index * 100); 
+      } else {
+    
+        el.classList.remove("scale-105", "scale-100", "translate-y-0", "opacity-100");
+        el.classList.add("scale-90", "translate-y-10", "opacity-0");
+      }
+    });
+  }
+  animateScroll();
+  window.addEventListener("scroll", animateScroll);
+  window.addEventListener("resize", animateScroll);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".grid > div");
+
+  cards.forEach(card => {
+    card.classList.add(
+      "scale-90",
+      "translate-y-10",
+      "opacity-0",
+      "transition-all",
+      "duration-700",
+      "ease-out"
+    );
+  });
+
+ 
+  function animateCards() {
+    const viewportHeight = window.innerHeight;
+
+    cards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+    
+        setTimeout(() => {
+          card.classList.remove("scale-90", "translate-y-10", "opacity-0");
+          card.classList.add("scale-105", "translate-y-0", "opacity-100");
+          
+      
+          setTimeout(() => {
+            card.classList.remove("scale-105");
+            card.classList.add("scale-100");
+          }, 200); 
+        }, index * 150);
+      } else {
+       
+        card.classList.remove("scale-105", "scale-100", "translate-y-0", "opacity-100");
+        card.classList.add("scale-90", "translate-y-10", "opacity-0");
+      }
+    });
+  }
+
+  animateCards();
+
+  window.addEventListener("scroll", animateCards);
+  window.addEventListener("resize", animateCards);
+});
+</script>
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+
+  const runCounter = (counter) => {
+    counter.innerText = 0;
+
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = Math.ceil(target / speed);
+
+      if (count < target) {
+        counter.innerText = count + increment;
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          runCounter(counter);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+</script>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+let slideInterval = null;
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[index].classList.add('active');
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+function startAutoSlide() {
+  slideInterval = setInterval(nextSlide, 5000);
+}
+
+function resetAutoSlide() {
+  clearInterval(slideInterval);
+  startAutoSlide();
+}
+
+startAutoSlide();
+</script>
+
+<script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+</body>
+</html>

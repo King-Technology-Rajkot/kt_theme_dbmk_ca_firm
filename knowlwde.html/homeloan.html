@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+      <div id="navbar"></div>
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
+<div class="w-full bg-white p-2 sm:p-6 font-sans text-[#333] mt-[100px]">
+  <div class="max-w-6xl mx-auto border border-gray-300 rounded-md bg-[#f1f1f1] shadow-sm relative pt-10 pb-6 px-3 sm:px-6">
+    
+    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+      <span class="bg-[#1a407a] text-white px-6 sm:px-10 py-1.5 rounded text-xs sm:text-sm font-semibold tracking-wide shadow-md whitespace-nowrap">
+        Home Loan Calculator
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
+      <div class="space-y-4">
+        <div class="border border-gray-300 rounded p-4 sm:p-6 bg-[#f1f1f1] space-y-4">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <label class="text-[10px] sm:text-[11px] text-gray-600 sm:w-44 sm:text-right">Loan Amount(Rs.):</label>
+            <div class="flex items-center gap-2 flex-1">
+              <input type="text" value="0" class="border border-gray-400 bg-white w-20 sm:w-24 p-1 text-center text-[11px] sm:text-xs font-bold rounded shrink-0" />
+              <div class="flex-1 flex items-center gap-2">
+                <div class="w-1.5 h-4 bg-[#1a407a] rounded-sm shrink-0"></div>
+                <input type="range" class="w-full h-[3px] bg-gray-300 appearance-none cursor-pointer accent-[#1a407a]" />
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <label class="text-[10px] sm:text-[11px] text-gray-600 sm:w-44 sm:text-right">Loan Rate(%):</label>
+            <div class="flex items-center gap-2 flex-1">
+              <input type="text" value="0%" class="border border-gray-400 bg-white w-20 sm:w-24 p-1 text-center text-[11px] sm:text-xs font-bold rounded shrink-0" />
+              <div class="flex-1 flex items-center gap-2">
+                <div class="w-1.5 h-4 bg-[#1a407a] rounded-sm shrink-0"></div>
+                <input type="range" class="w-full h-[3px] bg-gray-300 appearance-none cursor-pointer accent-[#1a407a]" />
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-row items-center gap-4">
+            <label class="text-[10px] sm:text-[11px] text-gray-600 w-32 sm:w-44 sm:text-right">Compound Period:</label>
+            <select class="border border-gray-400 p-1 text-[11px] sm:text-xs bg-white rounded focus:outline-none min-w-[120px]">
+              <option>Annually</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <label class="text-[10px] sm:text-[11px] text-gray-600 sm:w-44 sm:text-right">Amortization Period (in years):</label>
+            <div class="flex items-center gap-2 flex-1">
+              <input type="text" value="0" class="border border-gray-400 bg-white w-20 sm:w-24 p-1 text-center text-[11px] sm:text-xs font-bold rounded shrink-0" />
+              <div class="flex-1 flex items-center gap-2">
+                <div class="w-1.5 h-4 bg-[#1a407a] rounded-sm shrink-0"></div>
+                <input type="range" class="w-full h-[3px] bg-gray-300 appearance-none cursor-pointer accent-[#1a407a]" />
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-row items-center gap-4">
+            <label class="text-[10px] sm:text-[11px] text-gray-600 w-32 sm:w-44 sm:text-right">First Payment Date:</label>
+            <input type="text" value="12/02/2026" class="border border-gray-400 bg-white w-28 p-1 text-center text-[11px] sm:text-xs rounded" />
+          </div>
+
+          <div class="flex flex-row items-center gap-4">
+            <label class="text-[10px] sm:text-[11px] text-gray-600 w-32 sm:w-44 sm:text-right">Payment Frequency:</label>
+            <select class="border border-gray-400 p-1 text-[11px] sm:text-xs bg-white rounded focus:outline-none min-w-[120px]">
+              <option>Monthly</option>
+            </select>
+          </div>
+
+          <div class="flex flex-row items-center gap-4">
+            <label class="text-[10px] sm:text-[11px] text-gray-600 w-32 sm:w-44 sm:text-right font-medium">Payment:</label>
+            <input type="text" class="border border-gray-400 bg-white w-24 p-1 rounded shadow-inner" readonly />
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <label class="text-[10px] sm:text-[11px] text-gray-600 sm:w-44 sm:text-right">Extra Payment(Rs.):</label>
+            <div class="flex items-center gap-2 flex-1">
+              <input type="text" value="0" class="border border-gray-400 bg-white w-20 sm:w-24 p-1 text-center text-[11px] sm:text-xs font-bold rounded shrink-0" />
+              <div class="flex-1 flex items-center gap-2">
+                <div class="w-1.5 h-4 bg-[#1a407a] rounded-sm shrink-0"></div>
+                <input type="range" class="w-full h-[3px] bg-gray-300 appearance-none cursor-pointer accent-[#1a407a]" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-gray-300 rounded p-4 sm:p-6 bg-[#f1f1f1] space-y-3">
+          <h3 class="text-center text-gray-500 text-sm sm:text-base mb-4">Fully Amortized</h3>
+          
+          <div class="space-y-2">
+            <div class="flex flex-row items-center gap-4">
+              <label class="text-[10px] sm:text-[11px] text-gray-600 w-40 sm:w-48 sm:text-right">Interest Rate (per payment):</label>
+              <input type="text" class="border border-gray-400 bg-white w-24 p-1 rounded shadow-inner" readonly />
+            </div>
+            <div class="flex flex-row items-center gap-4">
+              <label class="text-[10px] sm:text-[11px] text-gray-600 w-40 sm:w-48 sm:text-right">Total Payments (Rs.):</label>
+              <input type="text" class="border border-gray-400 bg-white w-24 p-1 rounded shadow-inner" readonly />
+            </div>
+            <div class="flex flex-row items-center gap-4">
+              <label class="text-[10px] sm:text-[11px] text-gray-600 w-40 sm:w-48 sm:text-right">Total Interest (Rs.):</label>
+              <input type="text" class="border border-gray-400 bg-white w-24 p-1 rounded shadow-inner" readonly />
+            </div>
+            <div class="flex flex-row items-center gap-4">
+              <label class="text-[10px] sm:text-[11px] text-gray-600 w-40 sm:w-48 sm:text-right">Number of Payments:</label>
+              <input type="text" class="border border-gray-400 bg-white w-24 p-1 rounded shadow-inner" readonly />
+            </div>
+            <div class="flex flex-row items-center gap-4">
+              <label class="text-[10px] sm:text-[11px] text-gray-600 w-40 sm:w-48 sm:text-right">Last Payment Date:</label>
+              <input type="text" class="border border-gray-400 bg-white w-24 p-1 rounded shadow-inner" readonly />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-gray-300 rounded flex flex-col h-fit lg:sticky lg:top-10">
+        <div class="bg-gray-100 py-1.5 text-center border-b border-gray-200 flex justify-between px-4 items-center">
+            <div class="flex-1 text-center">
+                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Graph</span>
+            </div>
+            <button class="bg-[#1a407a] text-white w-5 h-5 flex items-center justify-center rounded text-xs">-</button>
+        </div>
+        
+        <div class="p-6 sm:p-10 flex flex-col">
+          <div class="flex h-64">
+            <div class="flex flex-col justify-between text-[10px] text-gray-400 pr-4 h-full">
+              <span>100</span><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span>
+            </div>
+            <div class="flex-1 border-l border-b border-gray-300 relative">
+              <div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+                <div class="border-t border-gray-100 w-full"></div>
+                <div class="border-t border-gray-100 w-full"></div>
+                <div class="border-t border-gray-100 w-full"></div>
+                <div class="border-t border-gray-100 w-full"></div>
+                <div class="border-t border-gray-100 w-full"></div>
+                <div></div>
+              </div>
+              <div class="absolute inset-0 flex justify-around items-end px-4 sm:px-8">
+                <div class="w-12 sm:w-16 bg-[#1a407a] h-[1px]"></div>
+                <div class="w-12 sm:w-16 bg-[#1a407a] h-[1px]"></div>
+                <div class="w-12 sm:w-16 bg-[#1a407a] h-[1px]"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-around text-center mt-8 ml-8">
+            <span class="text-[9px] sm:text-[10px] w-16 sm:w-24 leading-tight text-gray-600">Instalment Amount</span>
+            <span class="text-[9px] sm:text-[10px] w-16 sm:w-24 leading-tight text-gray-600">Principal</span>
+            <span class="text-[9px] sm:text-[10px] w-16 sm:w-24 leading-tight text-gray-600">Total Repayment</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+</body>
+</html>

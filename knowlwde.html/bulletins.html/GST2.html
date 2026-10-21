@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+          <div id="navbar"></div>
+  <section class="">
+  </section>
+
+<div id="navbar"></div>
+
+<script>
+fetch("../../navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+</script>
+
+    <div class="w-full bg-white p-2 font-sans text-[#333] mt-[100px]">
+  <div class="max-w-[1300px] mb-[20px] mx-auto border border-gray-300 rounded-[2px] bg-[#fdfdfd] p-3 shadow-sm">
+    
+    <div class="flex justify-center gap-2 mb-3">
+      <button class="px-6 py-2 border border-gray-400 rounded-[3px] bg-[#f1f1f1] text-[13px] font-medium shadow-sm hover:bg-gray-200">Notifications</button>
+      <button class="px-6 py-2 border border-gray-400 rounded-[3px] bg-[#f1f1f1] text-[13px] font-medium shadow-sm hover:bg-gray-200">Circulars</button>
+      <button class="px-6 py-2 border border-gray-400 rounded-[3px] bg-[#f1f1f1] text-[13px] font-medium shadow-sm hover:bg-gray-200">Press Release</button>
+      <button class="px-6 py-2 border border-gray-400 rounded-[3px] bg-[#f1f1f1] text-[13px] font-medium shadow-sm hover:bg-gray-200">News Item</button>
+    </div>
+
+    <h2 class="text-center text-[22px] font-normal text-gray-800 mb-4 tracking-tight">Notification/Circular Search</h2>
+
+    <div class="grid grid-cols-[1fr_1fr_1.5fr_1.5fr_auto] gap-3 items-end mb-4 px-2">
+      <div class="flex flex-col gap-0.5">
+        <label class="text-[10px] text-center font-bold text-gray-500 uppercase">Date From</label>
+        <div class="flex items-center border border-gray-400 bg-white px-2 py-0.5">
+          <input type="text" value="12/11/2025" class="w-full outline-none text-[11px]" />
+          <span class="text-[10px] cursor-pointer">🗓️</span>
+        </div>
+      </div>
+      
+      <div class="flex flex-col gap-0.5">
+        <label class="text-[10px] text-center font-bold text-gray-500 uppercase">Date To</label>
+        <div class="flex items-center border border-gray-400 bg-white px-2 py-0.5">
+          <input type="text" value="12/02/2026" class="w-full outline-none text-[11px]" />
+          <span class="text-[10px] cursor-pointer">🗓️</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-0.5">
+        <label class="text-[10px] text-center font-bold text-gray-500 uppercase">Select</label>
+        <select class="border border-gray-400 bg-white px-2 py-0.5 text-[11px] outline-none h-[25px]">
+          <option>RBI SEBI</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col gap-0.5">
+        <label class="text-[9px] text-center font-bold text-gray-400 italic">Search For : RBISEBI , notification</label>
+        <button class="w-full border border-gray-400 bg-[#e9ecef] py-0.5 text-[11px] font-semibold rounded-[1px]">Search</button>
+      </div>
+
+      <button class="px-4 border border-gray-400 bg-[#e9ecef] py-0.5 text-[11px] font-semibold rounded-[1px] mb-[1px]">Back</button>
+    </div>
+
+    <div class="flex justify-end items-center gap-4 mb-0.5 px-1">
+      <span class="text-[10px] font-bold text-gray-600">Total Search Found : 344</span>
+      <span class="text-[10px] font-bold text-green-600 italic">You are viewing page 21 of 18</span>
+    </div>
+
+    <div class="border border-[#7a99c5] overflow-hidden">
+      <table class="w-full text-left border-collapse text-[11px] leading-tight">
+        <thead>
+          <tr class="bg-[#7a99c5] text-white divide-x divide-[#9db4d6]">
+            <th class="px-3 py-1.5 font-bold w-[60%]">Page Name</th>
+            <th class="px-3 py-1.5 font-bold">Circular/Notification Number</th>
+            <th class="px-3 py-1.5 font-bold">Circular/Notification Date</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr class="divide-x divide-gray-200 hover:bg-blue-50">
+            <td class="px-3 py-1 text-blue-700 underline cursor-pointer">Lending to Micro, Small & Medium Enterprises (MSME) Sector (Amendment) Directions, 2026</td>
+            <td class="px-3 py-1">RBI/2025-26/206</td>
+            <td class="px-3 py-1 text-center">09/02/2026</td>
+          </tr>
+          <tr class="divide-x divide-gray-200 hover:bg-blue-50">
+            <td class="px-3 py-1 text-blue-700 underline cursor-pointer">Voluntary Retention Route - Imparting predictability and increasing ease of business</td>
+            <td class="px-3 py-1">RBI/2025-26/205</td>
+            <td class="px-3 py-1 text-center">06/02/2026</td>
+          </tr>
+          <tr class="divide-x divide-gray-200 hover:bg-blue-50 bg-[#f9f9f9]">
+            <td class="px-3 py-1 text-blue-700 underline cursor-pointer">Reserve Bank of India (Rural Co-operative Banks - Cash Reserve Ratio)</td>
+            <td class="px-3 py-1">RBI/2025-26/203</td>
+            <td class="px-3 py-1 text-center">22/01/2026</td>
+          </tr>
+          <tr class="divide-x divide-gray-200 hover:bg-blue-50 bg-[#f9f9f9]">
+            <td class="px-3 py-1 text-blue-700 underline cursor-pointer">Reserve Bank of India (Rural Co-operative Banks – Managing Risks in Outsourcing) Directions, 2025</td>
+            <td class="px-3 py-1">RBI/2025-26/203</td>
+            <td class="px-3 py-1 text-center">22/01/2026</td>
+          </tr>
+          <tr class="divide-x divide-gray-200 hover:bg-blue-50 bg-[#f9f9f9]">
+            <td class="px-3 py-1 text-blue-700 underline cursor-pointer">Reserve Bank of India (Rural Co-operative Banks – Know Your Customer) Directions, 2025 (Updated as o</td>
+            <td class="px-3 py-1">RBI/2025-26/203</td>
+            <td class="px-3 py-1 text-center">22/01/2026</td>
+          </tr>
+   
+         
+          <tr class="h-20"><td colspan="3"></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flex items-center justify-between bg-[#f0f0f0] border border-[#7a99c5] border-t-0 px-2 py-0.5">
+      <div class="flex items-center gap-2">
+        <button class="w-5 h-5 flex items-center justify-center border border-gray-400 bg-gradient-to-b from-white to-gray-200 text-[10px] text-blue-800 font-bold">&lt;</button>
+        
+        <div class="w-40 h-3 bg-blue-50 border border-gray-400 relative rounded-[1px]">
+          <div class="absolute left-0 top-0 h-full w-6 bg-[#8da9cf] border-r border-gray-400"></div>
+          <button class="absolute right-0 top-0 h-full w-5 flex items-center justify-center border-l border-gray-400 bg-white text-blue-800 text-[10px] font-bold">&gt;</button>
+        </div>
+
+        <span class="text-[10px] text-gray-700">Page <strong>1</strong> of <strong>18</strong></span>
+      </div>
+      
+      <div class="text-[10px] text-gray-700 font-medium italic">
+        Item <strong>1</strong> to <strong>20</strong> of <strong>344</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<div id="footer"></div>
+
+<script>
+  fetch("../../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+</body>
+</html>

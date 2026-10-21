@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DBMK & CO Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100">
+ <div id="navbar"></div>
+
+
+  <section class="">
+  </section>
+
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+
+
+<section class="max-w-[98%] mx-auto bg-white shadow-xl rounded-lg p-8 mt-[110px] mb-[50px] mt-10 h-75">
+
+
+  <h2 class="text-center text-2xl font-semibold mb-4">- Apply Here -</h2>
+
+
+  <p class="text-center text-sm text-gray-700 mb-8">
+    We nurture and cultivate a sense of pride in the work and create team leaders.
+    Your growth chart will be governed by well-defined transparent policies of the firm.
+    Apply via the form given below and meet us for face to face interview.
+  </p>
+
+
+  <form class="grid grid-cols-1 md:grid-cols-2 gap-1 px-[50px]">
+
+
+    <div>
+      <label class="text-sm font-medium">First name <span class="text-red-500">*</span></label>
+      <input type="text" class="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:ring-1 focus:ring-blue-500">
+    </div>
+
+
+    <div>
+      <label class="text-sm font-medium">Last name <span class="text-red-500">*</span></label>
+      <input type="text" class="w-full border rounded px-3 py-2 mt-1">
+    </div>
+
+
+    <div>
+      <label class="text-sm font-medium">Email <span class="text-red-500">*</span></label>
+      <input type="email" class="w-full border rounded px-3 py-2 mt-1">
+    </div>
+
+
+    <div>
+      <label class="text-sm font-medium">Mobile No <span class="text-red-500">*</span></label>
+      <input type="tel" class="w-full border rounded px-3 py-2 mt-1">
+    </div>
+
+
+    <div>
+      <label class="text-sm font-medium">Gender <span class="text-red-500">*</span></label>
+      <select class="w-full border rounded px-3 py-2 mt-1">
+        <option>Select..</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+
+    <div>
+      <label class="text-sm font-medium">Position you are applying for</label>
+      <input type="text" class="w-full border rounded px-3 py-2 mt-1">
+    </div>
+
+
+    <div>
+      <label class="text-sm font-medium">Date Of Birth (DD/MM/YYYY) <span class="text-red-500">*</span></label>
+      <input type="text" placeholder="DD/MM/YYYY" class="w-full border rounded px-3 py-2 mt-1">
+    </div>
+
+
+    <div>
+      <label class="text-sm font-medium">Highest Qualification</label>
+      <input type="text" class="w-full border rounded px-3 py-2 mt-1">
+    </div>
+
+  
+    <div>
+      <label class="text-sm font-medium">Portfolio website</label>
+      <input type="url" placeholder="http://" class="w-full border rounded px-3 py-2 mt-1">
+    </div>
+
+
+    <div>
+      <label class="text-sm font-medium">
+        Upload Resume <span class="text-red-500">*</span>
+        <span class="text-xs text-gray-500">(Max size 1mb)</span>
+      </label>
+      <input type="file" class="w-full border rounded px-3 py-2 mt-1 bg-white">
+    </div>
+
+
+
+<div class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+
+  <div class="md:col-span-1">
+    <label class="text-sm font-medium">Last company you worked for</label>
+    <input type="text"
+      class="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:ring-1 focus:ring-blue-500">
+  </div>
+  
+  <div>
+    <label class="text-sm font-medium">Years Of Experience</label>
+    <select
+      class="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:ring-1 focus:ring-blue-500">
+      <option>Select Year</option>
+      <option>0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5+</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="text-sm font-medium invisible">Month</label>
+    <select
+      class="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:ring-1 focus:ring-blue-500">
+      <option>Select Month</option>
+      <option>0</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+      <option>11</option>
+    </select>
+  </div>
+
+</div>
+
+<div class="md:col-span-2 mt-6">
+  <label class="text-sm font-medium">Reference / Comments / Questions</label>
+  <textarea rows="4"
+    class="w-full border rounded px-3 py-2 mt-1 resize-none focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+</div>
+
+
+
+    <div class="md:col-span-2 text-center mt-4">
+      <button type="submit" class=" bg-[#F0F0F0] text-black px-8 py-2 rounded border border-1 border-[gray] transition">
+        Send Application
+      </button>
+    </div>
+  </form>
+</section>
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+    
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+</body>
+</html>

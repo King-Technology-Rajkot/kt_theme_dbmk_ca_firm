@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+       <div id="navbar"></div>
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+<div class="max-w-6xl mx-auto p-4 font-sans text-gray-800 mt-[100px]">
+    <div class="bg-[#f0f0f0] border border-gray-300 rounded-lg p-6 shadow-sm relative">
+        
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <button class="bg-[#1a407a] text-white px-8 py-1 rounded text-sm font-semibold shadow-md">
+                Calculate
+            </button>
+        </div>
+
+        <div class="space-y-4 mt-4">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-2">
+                <label class="text-sm font-medium">Please Select:</label>
+                <select class="border border-gray-400 p-1 text-sm bg-white rounded w-full md:w-auto min-w-[300px]">
+                    <option>National Saving Certificates (VIII Issue)</option>
+                </select>
+            </div>
+
+            <div class="flex items-center justify-start md:ml-32 gap-2">
+                <label class="text-sm font-medium">Investment Amount:</label>
+                <input type="text" value="0" class="border border-gray-400 p-1 w-24 text-center text-sm font-bold rounded shadow-inner" />
+            </div>
+
+            <div class="flex items-center pl-[180px] gap-2">
+                <label class="text-sm font-medium ">Period of Purchase</label>
+                <select class="border border-gray-400 p-1 text-xs bg-white rounded">
+                    <option>01-03-2001 to 28-02-2002</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mt-6">
+                <div class="flex items-center gap-2"><span class="text-xs w-32 shrink-0">1st Year Interest:</span><input type="text" class="border border-gray-300 bg-white w-full h-7 rounded shadow-sm" readonly></div>
+                <button class="border border-gray-300 bg-white h-7 rounded shadow-sm hidden md:block"></button>
+                
+                <div class="flex items-center gap-2"><span class="text-xs w-32 shrink-0">2nd Year Interest:</span><input type="text" class="border border-gray-300 bg-white w-full h-7 rounded shadow-sm" readonly></div>
+                <button class="border border-gray-300 bg-white h-7 rounded shadow-sm hidden md:block"></button>
+                
+                <div class="flex items-center gap-2"><span class="text-xs w-32 shrink-0">3rd Year Interest:</span><input type="text" class="border border-gray-300 bg-white w-full h-7 rounded shadow-sm" readonly></div>
+                <button class="border border-gray-300 bg-white h-7 rounded shadow-sm hidden md:block"></button>
+                
+                <div class="flex items-center gap-2"><span class="text-xs w-32 shrink-0">4th Year Interest:</span><input type="text" class="border border-gray-300 bg-white w-full h-7 rounded shadow-sm" readonly></div>
+                <button class="border border-gray-300 bg-white h-7 rounded shadow-sm hidden md:block"></button>
+                
+                <div class="flex items-center gap-2"><span class="text-xs w-32 shrink-0">5th Year Interest:</span><input type="text" class="border border-gray-300 bg-white w-full h-7 rounded shadow-sm" readonly></div>
+                <button class="border border-gray-300 bg-white h-7 rounded shadow-sm hidden md:block"></button>
+                
+                <div class="flex items-center gap-2"><span class="text-xs w-32 shrink-0">6th Year Interest:</span><input type="text" class="border border-gray-300 bg-white w-full h-7 rounded shadow-sm" readonly></div>
+                <button class="border border-gray-300 bg-white h-7 rounded shadow-sm hidden md:block"></button>
+            </div>
+
+            <div class="mt-6 space-y-2 max-w-sm">
+                <div class="flex items-center gap-2"><span class="text-xs font-bold uppercase w-32">Total Interest:</span><input type="text" class="border border-gray-300 bg-white w-full h-7 rounded shadow-sm" readonly></div>
+                <div class="flex items-center gap-2"><span class="text-xs font-bold uppercase w-32">Maturity Amount:</span><input type="text" class="border border-gray-300 bg-white w-full h-7 rounded shadow-sm" readonly></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 border border-gray-300 rounded shadow-sm">
+        <div class="bg-white border-b border-gray-200 p-2 flex justify-between items-center px-4">
+            <div class="w-full text-center text-sm font-semibold text-gray-700">Graph</div>
+            <button class="bg-[#1a407a] text-white w-5 h-5 flex items-center justify-center rounded text-lg">-</button>
+        </div>
+        
+        <div class="bg-white p-10 flex">
+            <div class="flex flex-col justify-between text-[11px] text-gray-500 pr-4 h-64 -mt-2">
+                <span>100</span><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span>
+            </div>
+
+            <div class="flex-1 border-l border-b border-gray-300 h-64 relative">
+                <div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+                    <div class="border-t border-gray-100 w-full h-px"></div>
+                    <div class="border-t border-gray-100 w-full h-px"></div>
+                    <div class="border-t border-gray-100 w-full h-px"></div>
+                    <div class="border-t border-gray-100 w-full h-px"></div>
+                    <div class="border-t border-gray-100 w-full h-px"></div>
+                    <div class="h-px"></div> </div>
+
+                <div class="absolute inset-0 flex justify-around items-end px-4">
+                    <div class="w-8 bg-blue-600 h-[2px] transition-all duration-500"></div>
+                    <div class="w-8 bg-blue-600 h-[2px] transition-all duration-500"></div>
+                    <div class="w-8 bg-blue-600 h-[2px] transition-all duration-500"></div>
+                    <div class="w-8 bg-blue-600 h-[2px] transition-all duration-500"></div>
+                    <div class="w-8 bg-blue-600 h-[2px] transition-all duration-500"></div>
+                    <div class="w-8 bg-blue-600 h-[2px] transition-all duration-500"></div>
+                </div>
+
+                <div class="absolute -bottom-10 left-0 right-0 flex justify-around text-center">
+                    <span class="text-[10px] w-12 leading-tight">1st Year Interest</span>
+                    <span class="text-[10px] w-12 leading-tight">2nd Year Interest</span>
+                    <span class="text-[10px] w-12 leading-tight">3rd Year Interest</span>
+                    <span class="text-[10px] w-12 leading-tight">4th Year Interest</span>
+                    <span class="text-[10px] w-12 leading-tight">5th Year Interest</span>
+                    <span class="text-[10px] w-12 leading-tight">6th Year Interest</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+   
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRP Calculator</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    
+   <div id="navbar"></div>
+
+
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
+<!-- SECTION START -->
+<div class="bg-gray-100 py-24">
+
+  <div class="max-w-2xl mx-auto px-4 pt-16">
+
+    <!-- Title Button -->
+    <div class="flex justify-center">
+      <div class="bg-blue-900 text-white px-6 py-2 rounded-md shadow font-semibold text-lg">
+        New MRP Calculator
+      </div>
+    </div>
+
+    <!-- Box -->
+    <div class="mt-4 bg-gray-200 border border-gray-400 rounded-lg shadow p-8 text-center">
+
+      <p class="text-gray-700 font-medium mb-6">
+        Calculate new MRP after GST Rate change
+      </p>
+
+      <!-- Search -->
+      <input
+        type="text"
+        placeholder="Search by item description or HSN code..."
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+      />
+
+      <p class="text-gray-600 mt-6">
+        Search for an item to begin
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+</body>
+</html>
+```

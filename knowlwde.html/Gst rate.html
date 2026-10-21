@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <div id="navbar"></div>
+
+
+  <section class="">
+  </section>
+
+ <script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
+```html
+<!-- GST RATE CALCULATOR -->
+<div class="bg-gray-100 py-16">
+
+  <div class="max-w-5xl mx-auto px-4">
+
+    <!-- Title -->
+    <div class="flex justify-center">
+      <div class="bg-blue-900 text-white px-6 py-3 rounded-md shadow text-center mt-14" >
+        <div class="font-semibold text-lg">GST Rate Calculator</div>
+        <div class="text-sm">
+          In case of Rate Change wef 22 Sep, 2025, find out applicable rate in different scenarios.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="mt-14 border border-gray-400 rounded-lg bg-gray-200 p-8">
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- LEFT FORM -->
+        <div class="md:col-span-2 space-y-5">
+
+          <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- Invoice Date -->
+            <div>
+              <label class="text-sm text-gray-700">Invoice Date</label>
+              <input type="date" class="w-full mt-1 border border-gray-300 rounded-md px-3 py-2 bg-white">
+            </div>
+
+            <!-- Old Rate -->
+            <div>
+              <label class="text-sm text-gray-700">Old Rate (Upto 21.09.2025)</label>
+              <input type="text" placeholder="0%" class="w-full mt-1 border border-gray-300 rounded-md px-3 py-2 bg-white">
+            </div>
+
+            <!-- Supply Date -->
+            <div>
+              <label class="text-sm text-gray-700">Supply Date</label>
+              <input type="date" class="w-full mt-1 border border-gray-300 rounded-md px-3 py-2 bg-white">
+            </div>
+
+            <!-- New Rate -->
+            <div>
+              <label class="text-sm text-gray-700">New Rate (wef 22.09.2025)</label>
+              <input type="text" placeholder="0%" class="w-full mt-1 border border-gray-300 rounded-md px-3 py-2 bg-white">
+            </div>
+
+            <!-- Payment Date -->
+            <div>
+              <label class="text-sm text-gray-700">Payment Date</label>
+              <input type="date" class="w-full mt-1 border border-gray-300 rounded-md px-3 py-2 bg-white">
+            </div>
+
+          </div>
+
+          <!-- Button -->
+          <div class="pt-4">
+            <button class="bg-blue-900 text-white px-6 py-2 rounded-md shadow border border-blackhover:bg-blue-800 ">
+              Calculate Rate
+            </button>
+          </div>
+
+        </div>
+
+        <!-- RIGHT RESULT -->
+        <div class="bg-gray-100 border border-gray-300 rounded-md flex items-center justify-center text-center p-6 h-56">
+          <div>
+            <div class="text-gray-600 text-lg">Applicable GST</div>
+            <div class="text-3xl font-semibold text-gray-700 mt-2">--%</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div class="mt-6 bg-gray-200 border border-gray-400 rounded-lg p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-3">Important Notes:</h3>
+      <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+        <li>If date of any two of invoice, supply or payment occur before the rate change, old rate applies; otherwise, the new rate applies.</li>
+        <li>Date of Receipt of Payment: Date of credit in books of account or date of payment in bank, whichever is earlier.</li>
+        <li>Date of Supply for Services: Date of invoice or date of payment, whichever is earlier.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+    
+</body>
+</html>

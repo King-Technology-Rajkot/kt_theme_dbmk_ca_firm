@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <div id="navbar"></div>
+
+
+  <section class="">
+  </section>
+<script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
+    
+
+<section class="w-full h-[100px] bg-gradient-to-r from-[#243554] to-[#6b7294] mt-[80px]">
+  <div class="max-w-7xl mx-auto px-12 flex gap-4 pt-[25px]">
+
+  
+    <span class="w-[3px] h-10 bg-white"></span>
+
+ 
+    <h1 class="text-white text-4xl font-semibold ">
+ Due Diligence
+    </h1>
+  </div>
+</section>
+
+
+<section class="bg-white px-10 py-8 max-w-6xl mx-auto text-gray-800 font-sans">
+
+  <!-- INTRO PARAGRAPH -->
+  <p class="text-[15px] leading-[26px] mb-6">
+    At <span class="font-semibold">D B M K &amp; Co</span> Chartered Accountants, we offer comprehensive
+    Due Diligence services tailored to meet the diverse needs of our clients. Our expertise
+    ensures that clients gain valuable insights and make informed decisions in their financial
+    and business transactions. Below are the key features of our Due Diligence services:
+  </p>
+
+  <!-- LIST -->
+  <ol class="list-decimal pl-5 space-y-5 text-[15px] leading-[26px]">
+
+    <li>
+      <span class="font-semibold">Financial Due Diligence</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Assessment of financial statements for accuracy and compliance.</li>
+        <li>Identification of potential risks, including undisclosed liabilities.</li>
+        <li>Analysis of revenue trends, profit margins, and cash flow projections.</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="font-semibold">Tax Due Diligence</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Review of historical tax compliance and potential liabilities.</li>
+        <li>Evaluation of pending or ongoing tax disputes.</li>
+        <li>Verification of tax incentives and deductions claimed.</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="font-semibold">Legal &amp; Compliance Due Diligence</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Review of legal documents, contracts, and agreements.</li>
+        <li>Assessment of compliance with regulatory requirements.</li>
+        <li>Identification of potential litigation or legal risks.</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="font-semibold">Operational Due Diligence</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Evaluation of operational efficiency and processes.</li>
+        <li>Identification of key operational risks and areas for improvement.</li>
+        <li>Analysis of management capabilities and team structures.</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="font-semibold">Business and Market Due Diligence</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Analysis of the target business's market position and competition.</li>
+        <li>Assessment of industry-specific risks and opportunities.</li>
+        <li>Examination of strategic alignment with client objectives.</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="font-semibold">Specialized Due Diligence for Mergers &amp; Acquisitions</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Comprehensive evaluation of target companies for acquisitions or mergers.</li>
+        <li>Assistance in deal structuring and negotiation support.</li>
+        <li>Risk identification to safeguard the client’s investment.</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="font-semibold">Vendor Due Diligence</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Preparation of due diligence reports for potential buyers.</li>
+        <li>Presentation of the company's value proposition to investors.</li>
+        <li>Highlighting strengths and addressing potential buyer concerns.</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="font-semibold">Customized Reporting</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Providing detailed, clear, and actionable reports.</li>
+        <li>Presenting findings in a user-friendly format for stakeholders.</li>
+        <li>Offering recommendations for risk mitigation and strategic decisions.</li>
+      </ul>
+    </li>
+
+    <li>
+      <span class="font-semibold">Why Choose Us?</span>
+      <ul class="list-disc pl-6 mt-2 space-y-1">
+        <li>Extensive experience across industries and domains.</li>
+        <li>Proactive approach to identifying and mitigating risks.</li>
+        <li>Team of dedicated professionals with deep expertise in financial, legal, and tax domains.</li>
+        <li>Commitment to confidentiality, integrity, and precision in every engagement.</li>
+      </ul>
+    </li>
+
+  </ol>
+
+  <p class="mt-[20px]">
+    Our Due Diligence services are designed to empower our clients with the knowledge they need to navigate complex transactions confidently. Partner with us to uncover hidden opportunities and ensure a seamless due diligence process.
+  </p>
+</section>
+ <div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider(); 
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return; 
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+    // INIT
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    // expose buttons
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+
+
+
+</body>
+</html>

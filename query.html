@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Query Sheet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+
+  <section class="">
+  </section>
+
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+
+ <div class="max-w-[98%] mx-auto bg-white 
+shadow-[0_15px_35px_rgba(0,0,0,0.45)] 
+rounded-md p-10 px-[70px] mt-[100px] mb-[20px]">
+
+
+    <h2 class="text-center text-2xl font-semibold mb-8">
+      ::Query Sheet::
+    </h2>
+
+
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-1">
+
+      <div>
+        <label class="block text-sm font-medium mb-1">
+          Name <span class="text-red-500">*</span>
+        </label>
+        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">
+          Designation
+        </label>
+        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2">
+      </div>
+
+   
+      <div>
+        <label class="block text-sm font-medium mb-1">
+          Organization
+        </label>
+        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">
+          Office Address
+        </label>
+        <input type="address" class="w-full border border-gray-300 rounded px-3 py-2">
+      </div>
+
+
+      <div>
+        <label class="block text-sm font-medium mb-1">
+          City <span class="text-red-500">*</span>
+        </label>
+        <input type="select" class="w-full border border-gray-300 rounded px-3 py-2">
+      </div>
+
+  
+      <div>
+        <label class="block text-sm font-medium mb-1">
+          E-mail address <span class="text-red-500">*</span>
+        </label>
+        <input type="email" class="w-full border border-gray-300 rounded px-3 py-2">
+      </div>
+
+  
+      <div>
+        <label class="block text-sm font-medium mb-1">
+          Telephone No.
+        </label>
+        <input type="number" class="w-full border border-gray-300 rounded px-3 py-2">
+      </div>
+
+
+      <div>
+        <label class="block text-sm font-medium mb-1">
+          Mobile <span class="text-red-500">*</span>
+        </label>
+        <input type="number" class="w-full border border-gray-300 rounded px-3 py-2">
+      </div>
+
+  
+      <div>
+        <label class="block text-sm font-medium mb-2">
+          Other professional updates <span class="text-red-500">*</span>
+        </label>
+        <div class="flex items-center gap-4">
+          <label class="flex items-center gap-1">
+            <input type="radio" name="updates" class="accent-blue-600">
+            Yes
+          </label>
+          <label class="flex items-center gap-1">
+            <input type="radio" name="updates" class="accent-blue-600">
+            No
+          </label>
+        </div>
+      </div>
+      <div>  
+
+
+        <label class="block text-sm font-medium mb-1">
+          Subject of Query <span class="text-red-500">*</span>
+        </label>
+        <select class="w-full border border-gray-300 rounded px-3 py-2">
+          <option>-----Please Select-----</option>
+          <option>GST</option>
+          <option>Income Tax</option>
+          <option>Audit</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium mb-1">
+          Query <span class="text-red-500">*</span>
+        </label>
+        <textarea rows="4" class="w-full border border-gray-300 rounded "></textarea>
+      </div>
+
+      <div class="md:col-span-2 flex justify-center gap-4 mt-4">
+        <button type="button" class="px-6 py-2 border rounded bg-gray-200 hover:bg-gray-300">
+          Back
+        </button>
+        <button type="submit" class="px-6 py-2 border rounded text-black hover:bg-blue-700 bg-gray-200">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+<div id="footer"></div>
+
+<script>
+  fetch("../footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+      initFooterSlider();
+    });
+
+  function initFooterSlider() {
+    const slides = document.querySelectorAll('.footer-slide');
+    let current = 0;
+    let interval = null;
+    const DELAY = 5000;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.style.display = 'none');
+      slides[index].style.display = 'block';
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function startAuto() {
+      interval = setInterval(nextSlide, DELAY);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+    // INIT
+    showSlide(current);
+    startAuto();
+
+    const slider = document.getElementById('footer-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+    }
+
+    // expose buttons
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
+</script>
+
+
+
+</body>
+</html>
